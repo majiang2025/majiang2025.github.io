@@ -326,7 +326,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git@github.com&gt;:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p>验证 SSH 连接</p>
-<p>bash<br>ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#109;">git@github.com</a></p>
+<p>bash<br>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;">git@github.com</a></p>
 <p>要是看到Hi &lt;用户名&gt;! You’ve successfully authenticated…，就说明连接成功了。</p>
 <p>参考：<a href="https://majiang2025.github.io/">本人博客</a></p>
 
@@ -438,7 +438,7 @@
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><a target="_blank" rel="noopener" href="https://lddgo.net/">超级链接</a> - <code>[超级链接](https://lddgo.net)</code></li>
-<li><a href="mailto:&#117;&#115;&#101;&#114;&#110;&#x61;&#x6d;&#101;&#64;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><a href="mailto:&#117;&#115;&#x65;&#114;&#110;&#97;&#109;&#x65;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
 <h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H1 至 H6，使用 ##(N) 打头。</p>
 <blockquote>
@@ -765,7 +765,7 @@ title A Gantt Diagram
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 10:38:45" itemprop="dateModified" datetime="2025-07-04T10:38:45+08:00">2025-07-04</time>
+      <time title="修改时间：2025-07-04 11:25:02" itemprop="dateModified" datetime="2025-07-04T11:25:02+08:00">2025-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -863,23 +863,14 @@ title A Gantt Diagram
 
 <h3 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h3><h4 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用sudo以root权限创建目录</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /var/www/myblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改目录所有者为当前用户（如ubuntu）</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R ubuntu:www-data /var/www/myblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置适当的权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> -R 755 /var/www/myblog</span><br><span class="line">  </span><br><span class="line">hexo d <span class="comment"># 将文件复制到/var/www/html/（根据deploy配置）</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="六、-优化"><a href="#六、-优化" class="headerlink" title="六、 优化"></a>六、 优化</h3><p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
-<ol>
-<li>头像</li>
-</ol>
+<h3 id="六、-优化"><a href="#六、-优化" class="headerlink" title="六、 优化"></a>六、 优化</h3><h4 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h4><p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># 小图标（16x16）</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># 中图标（32x32）</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># Apple 设备图标</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># Safari 固定标签页图标</span></span><br><span class="line">  <span class="comment">#small: /images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="comment">#medium: /images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment">#safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
 
 <p>把头像文件放在 myblog&#x2F;source&#x2F;images 下</p>
-<ol start="2">
-<li>打赏</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Donate (Sponsor) settings</span></span><br><span class="line"><span class="comment"># Front-matter variable (nonsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, a donate button will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
+<h4 id="打赏"><a href="#打赏" class="headerlink" title="打赏"></a>打赏</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Donate (Sponsor) settings</span></span><br><span class="line"><span class="comment"># Front-matter variable (nonsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, a donate button will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
 
 <p>把图片文件放在 myblog&#x2F;themes&#x2F;next&#x2F;source&#x2F;images 下</p>
-<ol start="3">
-<li>Hexo NexT 本地搜索</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<h4 id="Hexo-NexT-本地搜索"><a href="#Hexo-NexT-本地搜索" class="headerlink" title="Hexo NexT 本地搜索"></a>Hexo NexT 本地搜索</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
 
 <p>配置站点文件</p>
 <p>编辑 myblog&#x2F;themes&#x2F;next 下配置文件 _config.yml，新增以下内容：</p>
@@ -897,10 +888,7 @@ title A Gantt Diagram
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 
 <p>这样就可以在 Hexo 的 NexT 主题中使用本地搜索功能了</p>
-<ol start="4">
-<li>懒加载</li>
-</ol>
-<p>编辑 nano themes&#x2F;next&#x2F;_config.yml：</p>
+<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><p>编辑 nano themes&#x2F;next&#x2F;_config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lazyload:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>图片懒加载</p>
@@ -909,10 +897,7 @@ title A Gantt Diagram
 <p>编辑 nano _config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lazyload:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 启用懒加载</span></span><br><span class="line">  <span class="attr">onlypost:</span> <span class="literal">false</span>  <span class="comment"># 是否只对文章中的图片生效</span></span><br><span class="line">  <span class="attr">loadingImg:</span> <span class="string">&quot;&quot;</span>  <span class="comment"># 自定义加载中的占位图路径</span></span><br><span class="line">  <span class="attr">errorImg:</span> <span class="string">&quot;&quot;</span>  <span class="comment"># 图片加载失败时显示的图片路径</span></span><br><span class="line">  <span class="attr">quality:</span> <span class="number">80</span>  <span class="comment"># 图片质量（仅对生成的响应式图片有效）</span></span><br></pre></td></tr></table></figure>
 
-<ol start="5">
-<li>增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译</li>
-</ol>
-<h4 id="字符统计、阅读时间统计"><a href="#字符统计、阅读时间统计" class="headerlink" title="字符统计、阅读时间统计"></a>字符统计、阅读时间统计</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<h4 id="增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译"><a href="#增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译" class="headerlink" title="增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译"></a>增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译</h4><h5 id="字符统计、阅读时间统计"><a href="#字符统计、阅读时间统计" class="headerlink" title="字符统计、阅读时间统计"></a>字符统计、阅读时间统计</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
 
 <p>编辑 nano _config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>                <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                   <span class="comment"># 文章阅读时长</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>          <span class="comment"># 站点总字数统计</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>             <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>     <span class="comment"># 排除代码字数统计</span></span><br></pre></td></tr></table></figure>
@@ -920,10 +905,7 @@ title A Gantt Diagram
 <p>编辑 nano themes&#x2F;next&#x2F;_config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-word-counter</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<ol start="6">
-<li>分类和标签</li>
-</ol>
-<p>生成分类页面</p>
+<h4 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h4><p>生成分类页面</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>生成后，编辑 source&#x2F;categories&#x2F;index.md 文件，添加以下内容：</p>
