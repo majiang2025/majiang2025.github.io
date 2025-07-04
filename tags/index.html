@@ -265,7 +265,7 @@
     目前共计 4 个标签
   </div>
   <div class="tag-cloud-tags">
-    <a href="/tags/github-io/" style="font-size: 12px;" class="tag-cloud-0">github-io</a> <a href="/tags/hello-world/" style="font-size: 12px;" class="tag-cloud-0">hello-world</a> <a href="/tags/hexo-next/" style="font-size: 12px;" class="tag-cloud-0">hexo-next</a> <a href="/tags/mark-down/" style="font-size: 12px;" class="tag-cloud-0">mark-down</a>
+    <a href="/tags/github-hexo/" style="font-size: 12px;" class="tag-cloud-0">github-hexo</a> <a href="/tags/hello-world/" style="font-size: 12px;" class="tag-cloud-0">hello-world</a> <a href="/tags/hexo-next/" style="font-size: 12px;" class="tag-cloud-0">hexo-next</a> <a href="/tags/mark-down/" style="font-size: 12px;" class="tag-cloud-0">mark-down</a>
   </div>
 </div>
 
@@ -284,26 +284,6 @@
 
   <footer class="footer">
     <div class="footer-inner">
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js'></script>
-  <script>
-    String.prototype.replaceAll = function(search, replacement) {
-      var target = this;
-      return target.split(search).join(replacement);
-    };
-
-    let vizObjects = document.querySelectorAll('.graphviz')
-
-    for (let item of vizObjects) {
-      let svg = undefined
-      try {
-        svg = Viz(item.textContent.replaceAll('–', '--'), 'svg')
-      } catch(e) {
-        svg = `<pre class="error">${e}</pre>`
-      }
-      item.outerHTML = svg
-    }
-  </script>
 
   <div class="copyright">
     &copy; 
