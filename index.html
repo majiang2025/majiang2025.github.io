@@ -260,7 +260,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 08:56:54" itemprop="dateModified" datetime="2025-07-04T08:56:54+08:00">2025-07-04</time>
+      <time title="修改时间：2025-07-04 11:28:25" itemprop="dateModified" datetime="2025-07-04T11:28:25+08:00">2025-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,14 +297,9 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="GitHub-Hexo搭建个人免费博客网站"><a href="#GitHub-Hexo搭建个人免费博客网站" class="headerlink" title="GitHub + Hexo搭建个人免费博客网站"></a>GitHub + Hexo搭建个人免费博客网站</h2><p>本文介绍如何使用GitHub + Hexo搭建个人免费博客网站，所有内容亲测，绝对可用。</p>
-<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><ol>
-<li><p>GitHub账号<br>需要有一个GitHub账号，没有的话到 官网 申请一个。<br>注册很简单，不懂的话可以参考 GitHub申请账号</p>
-</li>
-<li><p>安装Git<br>在自己电脑上安装好Git，hexo部署到GitHub时要用。<br>网上找篇教程或者参考 Git安装。</p>
-</li>
-<li><p>安装NodeJS<br>在自己电脑上安装好NodeJS，Hexo是基于NodeJS编写的，所以需要安装NodeJS和npm工具。<br>网上找篇教程或者参考 NodeJS安装及配置。</p>
-</li>
-</ol>
+<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><h4 id="GitHub账号"><a href="#GitHub账号" class="headerlink" title="GitHub账号"></a>GitHub账号</h4><p>需要有一个GitHub账号，没有的话到 官网 申请一个。<br>注册很简单，不懂的话可以参考 GitHub申请账号</p>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>在自己电脑上安装好Git，hexo部署到GitHub时要用。<br>网上找篇教程或者参考 Git安装。</p>
+<h4 id="安装NodeJS"><a href="#安装NodeJS" class="headerlink" title="安装NodeJS"></a>安装NodeJS</h4><p>在自己电脑上安装好NodeJS，Hexo是基于NodeJS编写的，所以需要安装NodeJS和npm工具。<br>网上找篇教程或者参考 NodeJS安装及配置。</p>
 <h3 id="二、创建仓库"><a href="#二、创建仓库" class="headerlink" title="二、创建仓库"></a>二、创建仓库</h3><p>在GitHub上创建一个新的代码仓库用于保存我们的网页。</p>
 <p>点击Your repositories，进入仓库页面。</p>
 <p>点击New按钮，进入仓库创建页面。</p>
@@ -326,7 +321,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git@github.com&gt;:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p>验证 SSH 连接</p>
-<p>bash<br>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#x6d;">git@github.com</a></p>
+<p>bash<br>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">git@github.com</a></p>
 <p>要是看到Hi &lt;用户名&gt;! You’ve successfully authenticated…，就说明连接成功了。</p>
 <p>参考：<a href="https://majiang2025.github.io/">本人博客</a></p>
 
@@ -438,7 +433,7 @@
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><a target="_blank" rel="noopener" href="https://lddgo.net/">超级链接</a> - <code>[超级链接](https://lddgo.net)</code></li>
-<li><a href="mailto:&#117;&#115;&#x65;&#114;&#110;&#97;&#109;&#x65;&#64;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><a href="mailto:&#117;&#x73;&#101;&#x72;&#x6e;&#x61;&#x6d;&#x65;&#64;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
 <h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H1 至 H6，使用 ##(N) 打头。</p>
 <blockquote>
@@ -765,7 +760,7 @@ title A Gantt Diagram
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 11:25:02" itemprop="dateModified" datetime="2025-07-04T11:25:02+08:00">2025-07-04</time>
+      <time title="修改时间：2025-07-04 11:26:58" itemprop="dateModified" datetime="2025-07-04T11:26:58+08:00">2025-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -813,46 +808,27 @@ title A Gantt Diagram
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | <span class="built_in">sudo</span> -E bash -  <span class="comment"># 推荐20.x  </span></span><br><span class="line"><span class="built_in">sudo</span> apt install -y nodejs</span><br><span class="line">node -v  <span class="comment"># 验证版本≥20</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="二、创建-Hexo-博客"><a href="#二、创建-Hexo-博客" class="headerlink" title="二、创建 Hexo 博客"></a>二、创建 Hexo 博客</h3><ol>
-<li>安装 Hexo CLI</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-cli -g</span><br><span class="line">hexo -v  <span class="comment"># 验证安装</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、创建-Hexo-博客"><a href="#二、创建-Hexo-博客" class="headerlink" title="二、创建 Hexo 博客"></a>二、创建 Hexo 博客</h3><h4 id="安装-Hexo-CLI"><a href="#安装-Hexo-CLI" class="headerlink" title="安装 Hexo CLI"></a>安装 Hexo CLI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-cli -g</span><br><span class="line">hexo -v  <span class="comment"># 验证安装</span></span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>创建 Hexo 博客</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog &amp;&amp; <span class="built_in">cd</span> myblog</span><br><span class="line">npm install  <span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建-Hexo-博客"><a href="#创建-Hexo-博客" class="headerlink" title="创建 Hexo 博客"></a>创建 Hexo 博客</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog &amp;&amp; <span class="built_in">cd</span> myblog</span><br><span class="line">npm install  <span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>安装 Next 主题</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h4 id="安装-Next-主题"><a href="#安装-Next-主题" class="headerlink" title="安装 Next 主题"></a>安装 Next 主题</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
 
-<h3 id="三、配置-Next-主题"><a href="#三、配置-Next-主题" class="headerlink" title="三、配置 Next 主题"></a>三、配置 Next 主题</h3><ol>
-<li>修改 Hexo 主配置<br>编辑nano _config.yml：</li>
-</ol>
+<h3 id="三、配置-Next-主题"><a href="#三、配置-Next-主题" class="headerlink" title="三、配置 Next 主题"></a>三、配置 Next 主题</h3><h4 id="修改-Hexo-主配置"><a href="#修改-Hexo-主配置" class="headerlink" title="修改 Hexo 主配置"></a>修改 Hexo 主配置</h4><p>编辑nano _config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">XXX’s</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">XXX</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL设置（替换为你的域名）</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://XXX</span></span><br><span class="line"><span class="comment"># 永久链接格式</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:year/:month/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署配置（后续使用Nginx部署）</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">rsync</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">XXX</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">root:</span> <span class="string">/var/www/myblog</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">22</span></span><br><span class="line">  <span class="attr">delete:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">verbose:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ignore_errors:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">args:</span> <span class="string">--exclude=.DS_Store</span> <span class="string">--exclude=*.tmp</span>  <span class="comment"># 排除临时文件</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="number">60</span>  <span class="comment"># 增加超时时间</span></span><br></pre></td></tr></table></figure>
 
 <p>  本地测试运行‌</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 
 <p>访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 检查主题生效</p>
-<ol start="2">
-<li>自定义 Next 主题</li>
-</ol>
-<p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
+<h4 id="自定义-Next-主题"><a href="#自定义-Next-主题" class="headerlink" title="自定义 Next 主题"></a>自定义 Next 主题</h4><p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主题风格（可选Muse/Mist/Pisces/Gemini）</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 菜单配置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">/search/</span> <span class="string">||</span> <span class="string">search</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 侧边栏配置</span></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span></span><br><span class="line">  <span class="attr">display:</span> <span class="string">always</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/your_username</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line">  <span class="attr">Twitter:</span> <span class="string">https://twitter.com/your_username</span> <span class="string">||</span> <span class="string">twitter</span></span><br><span class="line">  <span class="attr">LinkedIn:</span> <span class="string">https://linkedin.com/in/your_username</span> <span class="string">||</span> <span class="string">linkedin</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 评论系统（示例：使用Gitalk）</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">gitalk</span></span><br><span class="line">  <span class="attr">gitalk:</span></span><br><span class="line">    <span class="attr">clientID:</span> <span class="string">your_client_id</span></span><br><span class="line">    <span class="attr">clientSecret:</span> <span class="string">your_client_secret</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">your_repo</span></span><br><span class="line">    <span class="attr">owner:</span> <span class="string">your_username</span></span><br><span class="line">    <span class="attr">admin:</span> [<span class="string">&#x27;your_username&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
 
-<h3 id="四、安装并配置-Nginx"><a href="#四、安装并配置-Nginx" class="headerlink" title="四、安装并配置 Nginx"></a>四、安装并配置 Nginx</h3><ol>
-<li>安装 Nginx</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install nginx -y</span><br><span class="line"><span class="built_in">sudo</span> systemctl start nginx</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
+<h3 id="四、安装并配置-Nginx"><a href="#四、安装并配置-Nginx" class="headerlink" title="四、安装并配置 Nginx"></a>四、安装并配置 Nginx</h3><h4 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install nginx -y</span><br><span class="line"><span class="built_in">sudo</span> systemctl start nginx</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>配置 Nginx 虚拟主机<br>创建配置文件：</li>
-</ol>
+<h4 id="配置-Nginx-虚拟主机"><a href="#配置-Nginx-虚拟主机" class="headerlink" title="配置 Nginx 虚拟主机"></a>配置 Nginx 虚拟主机</h4><p>创建配置文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/nginx/sites-available/myblog</span><br></pre></td></tr></table></figure>
 
 <p>  添加以下内容（替换为你的域名）：</p>
