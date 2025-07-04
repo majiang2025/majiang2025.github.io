@@ -301,7 +301,7 @@
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><a target="_blank" rel="noopener" href="https://lddgo.net/">超级链接</a> - <code>[超级链接](https://lddgo.net)</code></li>
-<li><a href="mailto:&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><a href="mailto:&#x75;&#115;&#x65;&#114;&#x6e;&#97;&#x6d;&#101;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
 <h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H1 至 H6，使用 ##(N) 打头。</p>
 <blockquote>
@@ -689,7 +689,7 @@ title A Gantt Diagram
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git@github.com&gt;:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p>验证 SSH 连接</p>
-<p>bash<br>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">git@github.com</a></p>
+<p>bash<br>ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">git@github.com</a></p>
 <p>要是看到Hi &lt;用户名&gt;! You’ve successfully authenticated…，就说明连接成功了。</p>
 <p>参考：<a href="https://majiang2025.github.io/">本人博客</a></p>
 
@@ -754,7 +754,7 @@ title A Gantt Diagram
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 11:36:40" itemprop="dateModified" datetime="2025-07-04T11:36:40+08:00">2025-07-04</time>
+      <time title="修改时间：2025-07-04 11:52:50" itemprop="dateModified" datetime="2025-07-04T11:52:50+08:00">2025-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -772,14 +772,14 @@ title A Gantt Diagram
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.5k</span>
+      <span>6.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -891,6 +891,18 @@ title A Gantt Diagram
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">title: &quot;Hexo Next 主题配置指南&quot;</span><br><span class="line">date: 2025-07-02 10:00:00</span><br><span class="line">categories: 技术 # 分类（可多层级，如 &quot;技术/Hexo&quot;）</span><br><span class="line">tags:</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> Hexo</span><br><span class="line"><span class="bullet">-</span> Next主题</span><br><span class="line"><span class="bullet">-</span> 博客搭建</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">文章内容...</span><br></pre></td></tr></table></figure>
 
 <p>多层级分类示例：categories: 技术&#x2F;博客&#x2F;Hexo，会生成层级结构 技术 &gt; 博客 &gt; Hexo。<br>标签格式：可使用数组格式（如上）或逗号分隔（如 tags: Hexo, Next主题, 博客搭建）。</p>
+<h4 id="Hexo-分页设置"><a href="#Hexo-分页设置" class="headerlink" title="Hexo 分页设置"></a>Hexo 分页设置</h4><p>在 Hexo 中设置分页可以让你的博客更易于浏览。你可以通过修改配置文件 _config.yml 来实现分页功能。</p>
+<p>示例</p>
+<p>首先，确保你已经安装了必要的插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
+
+<p>然后，在你的主题配置文件 _config.yml 中进行如下修改：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主页每页显示文章数</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 归档分页每页显示文章数</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 标签分页每页显示文章数</span></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分类分页每页显示文章数</span></span><br><span class="line"><span class="attr">category_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>注意事项</p>
+<p>插件安装：确保你已经安装了 hexo-generator-index、hexo-generator-archive 和 hexo-generator-tag 插件。</p>
+<p>配置文件：在 _config.yml 文件中正确设置 per_page 参数，以控制每页显示的文章数量。</p>
+<p>通过以上步骤，你可以轻松地在 Hexo 博客中实现分页功能，使你的博客更加整洁和易于导航。</p>
 
       
     </div>
@@ -1041,7 +1053,7 @@ title A Gantt Diagram
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">15k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
