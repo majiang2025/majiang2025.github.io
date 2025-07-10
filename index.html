@@ -74,7 +74,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js" defer></script>
 
 
@@ -183,18 +183,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -228,6 +228,462 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/code-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.png">
+      <meta itemprop="name" content="Ma Jiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/2025/07/code-server/" class="post-title-link" itemprop="url">Code Server</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-07-10 16:31:46 / 修改时间：16:55:45" itemprop="dateCreated datePublished" datetime="2025-07-10T16:31:46+08:00">2025-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="Code Server" href="/posts/2025/07/code-server/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::d6c5729a800c563b66965db251e45a18" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下"><a href="#在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下" class="headerlink" title="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下"></a>在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下</h3><h4 id="1-安装-Node-js-14-x"><a href="#1-安装-Node-js-14-x" class="headerlink" title="1. 安装 Node.js 14.x"></a>1. 安装 Node.js 14.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_14.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>验证版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 应输出 v14.x.x</span></span><br><span class="line">npm -v   <span class="comment"># 应输出 6.x.x</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-安装-code-server"><a href="#2-安装-code-server" class="headerlink" title="2. 安装 code-server"></a>2. 安装 code-server</h4><p>使用 npm 全局安装最新稳定版：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g code-server@4.14.1</span><br></pre></td></tr></table></figure>
+
+<p>注意：选择 4.14.1 版本是为了兼容 Ubuntu 16.04 的较旧依赖环境。</p>
+<h4 id="3-配置-code-server"><a href="#3-配置-code-server" class="headerlink" title="3. 配置 code-server"></a>3. 配置 code-server</h4><p>创建配置目录并生成默认配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.config/code-server</span><br><span class="line">code-server --config ~/.config/code-server/config.yaml --generate-password</span><br></pre></td></tr></table></figure>
+
+<p>编辑配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>修改内容如下（示例）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>  <span class="comment"># 监听所有 IP，端口 8080</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>           <span class="comment"># 密码认证</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_password</span>  <span class="comment"># 改为强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>              <span class="comment"># 暂不使用 HTTPS</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-创建-Systemd-服务"><a href="#4-创建-Systemd-服务" class="headerlink" title="4. 创建 Systemd 服务"></a>4. 创建 Systemd 服务</h4><p>创建服务文件以便后台运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /lib/systemd/system/code-server.service</span><br></pre></td></tr></table></figure>
+
+<p>内容如下（替换 your_username 为你的用户名）：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=code-server</span><br><span class="line"><span class="attr">After</span>=networking.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=your_username</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/code-server --config /home/your_username/.config/code-server/config.yaml</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-启动服务并设置开机自启"><a href="#5-启动服务并设置开机自启" class="headerlink" title="5. 启动服务并设置开机自启"></a>5. 启动服务并设置开机自启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start code-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> code-server</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-配置防火墙（如果启用）"><a href="#6-配置防火墙（如果启用）" class="headerlink" title="6. 配置防火墙（如果启用）"></a>6. 配置防火墙（如果启用）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 8080</span><br><span class="line"><span class="built_in">sudo</span> ufw reload</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-访问-Web-界面"><a href="#7-访问-Web-界面" class="headerlink" title="7. 访问 Web 界面"></a>7. 访问 Web 界面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://服务器IP:8080</span><br></pre></td></tr></table></figure>
+
+<p>输入配置的密码登录。</p>
+<h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h5 id="1-内存不足"><a href="#1-内存不足" class="headerlink" title="1.内存不足"></a>1.内存不足</h5><p>Ubuntu 16.04 至少需要 1GB RAM，可添加交换空间：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fallocate -l 1G /swapfile</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br><span class="line"><span class="built_in">sudo</span> swapon /swapfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/swapfile none swap defaults 0 0&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/jupyter-notebook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.png">
+      <meta itemprop="name" content="Ma Jiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/2025/07/jupyter-notebook/" class="post-title-link" itemprop="url">Jupyter Notebook</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-07-10 15:41:26 / 修改时间：16:28:04" itemprop="dateCreated datePublished" datetime="2025-07-10T15:41:26+08:00">2025-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="Jupyter Notebook" href="/posts/2025/07/jupyter-notebook/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::3bff35bba293a767317d7e7fe1ec2522" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="在-Ubuntu-16-04-Server-上安装-Jupyter-Notebook，可以按照以下步骤进行"><a href="#在-Ubuntu-16-04-Server-上安装-Jupyter-Notebook，可以按照以下步骤进行" class="headerlink" title="在 Ubuntu 16.04 Server 上安装 Jupyter Notebook，可以按照以下步骤进行"></a>在 Ubuntu 16.04 Server 上安装 Jupyter Notebook，可以按照以下步骤进行</h3><h4 id="1-更新系统软件包"><a href="#1-更新系统软件包" class="headerlink" title="1. 更新系统软件包"></a>1. 更新系统软件包</h4><p>首先更新系统的软件包列表和已安装的软件包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get upgrade -y</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-安装-Python-和-pip"><a href="#2-安装-Python-和-pip" class="headerlink" title="2. 安装 Python 和 pip"></a>2. 安装 Python 和 pip</h4><p>Jupyter Notebook 依赖于 Python，Ubuntu 16.04 默认安装了 Python 2.7 和 Python 3.5，这里建议安装 Python 3 和 pip：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install python3 python3-pip -y</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-pip3-换清华源"><a href="#3-pip3-换清华源" class="headerlink" title="3. pip3 换清华源"></a>3. pip3 换清华源</h4><p>使用 Python 3.6，可以尝试重新安装兼容版本的 pip。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除当前有问题的pip</span></span><br><span class="line">python3.6 -m pip uninstall pip</span><br><span class="line"><span class="comment"># 安装兼容版本的pip</span></span><br><span class="line">curl https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.py</span><br><span class="line">python3.6 get-pip.py</span><br></pre></td></tr></table></figure>
+
+<p>设为默认</p>
+<p>升级 pip 到最新的版本后进行配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip</span><br><span class="line"></span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-使用-pip-安装-Jupyter-Notebook"><a href="#4-使用-pip-安装-Jupyter-Notebook" class="headerlink" title="4. 使用 pip 安装 Jupyter Notebook"></a>4. 使用 pip 安装 Jupyter Notebook</h4><p>使用 pip3 安装 Jupyter Notebook：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pip3 install jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-配置-Jupyter-Notebook"><a href="#5-配置-Jupyter-Notebook" class="headerlink" title="5. 配置 Jupyter Notebook"></a>5. 配置 Jupyter Notebook</h4><p>生成 Jupyter 配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+
+<p>创建 Jupyter Notebook 密码（会生成加密后的密码）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook password</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-创建-Systemd-服务"><a href="#6-创建-Systemd-服务" class="headerlink" title="6. 创建 Systemd 服务"></a>6. 创建 Systemd 服务</h4><p>为了方便管理 Jupyter Notebook 服务，创建一个 systemd 服务文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/jupyter.service</span><br></pre></td></tr></table></figure>
+
+<p>在文件中添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Jupyter Notebook</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=your_username  # 替换为你的用户名</span><br><span class="line">Group=your_username  # 替换为你的用户名</span><br><span class="line">WorkingDirectory=/home/your_username  # 替换为你的主目录</span><br><span class="line">ExecStart=/usr/local/bin/jupyter notebook --config=/home/your_username/.jupyter/jupyter_notebook_config.py</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-启动-Jupyter-Notebook-服务"><a href="#7-启动-Jupyter-Notebook-服务" class="headerlink" title="7. 启动 Jupyter Notebook 服务"></a>7. 启动 Jupyter Notebook 服务</h4><p>重载 systemd 管理器配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
+<p>启动 Jupyter Notebook 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start jupyter</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> jupyter</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-配置防火墙"><a href="#8-配置防火墙" class="headerlink" title="8. 配置防火墙"></a>8. 配置防火墙</h4><p>如果服务器启用了防火墙，需要开放 Jupyter Notebook 默认端口（8888）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 8888</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-配置"><a href="#9-配置" class="headerlink" title="9. 配置"></a>9. 配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 备份并重新生成配置文件</span></span><br><span class="line"><span class="built_in">cp</span> ~/.jupyter/jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py.bak</span><br><span class="line">jupyter notebook --generate-config --allow-root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 设置密码</span></span><br><span class="line">jupyter notebook password</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 修改配置文件</span></span><br><span class="line">nano ~/.jupyter/jupyter_notebook_config.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip = <span class="string">&#x27;your_server_ip&#x27;</span></span><br><span class="line">c.NotebookApp.open_browser = <span class="literal">False</span></span><br><span class="line">c.NotebookApp.port = <span class="number">8888</span></span><br><span class="line">在配置文件中添加 / 修改以下行：</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">验证</span><br><span class="line"><span class="comment"># 检查服务状态</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl status jupyter</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看日志</span></span><br><span class="line">journalctl -u jupyter -f</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-访问-Jupyter-Notebook"><a href="#10-访问-Jupyter-Notebook" class="headerlink" title="10. 访问 Jupyter Notebook"></a>10. 访问 Jupyter Notebook</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在浏览器中访问：</span><br><span class="line">http://your_server_ip:8888</span><br></pre></td></tr></table></figure>
+
+<p>输入之前设置的密码，即可登录 Jupyter Notebook。</p>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>建议使用 HTTPS 访问 Jupyter Notebook，可以通过配置 SSL 证书实现。</li>
+<li>可以修改 Jupyter 配置文件（~&#x2F;.jupyter&#x2F;jupyter_notebook_config.py）来自定义更多选项，如监听地址、端口等。</li>
+<li>如果需要在后台运行 Jupyter Notebook，可以使用nohup命令或配置为服务。</li>
+</ul>
+<p>如果安装过程中遇到权限问题，可能需要使用sudo -H pip3 install jupyter来确保正确安装。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/waline/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.png">
+      <meta itemprop="name" content="Ma Jiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Ma Jiang's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/2025/07/waline/" class="post-title-link" itemprop="url">Waline</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-07-07 17:00:40" itemprop="dateCreated datePublished" datetime="2025-07-07T17:00:40+08:00">2025-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-10 16:04:23" itemprop="dateModified" datetime="2025-07-10T16:04:23+08:00">2025-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Waline/" itemprop="url" rel="index"><span itemprop="name">Waline</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="Waline" href="/posts/2025/07/waline/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::615031b200fb948bbf4d210d944878ed" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Waline"><a href="#Waline" class="headerlink" title="Waline"></a>Waline</h3><p>欢迎使用 Waline，只需几个步骤，你就可以在你的网站中启用 Waline 提供评论与浏览量服务。</p>
+<h4 id="LeanCloud-设置-数据库"><a href="#LeanCloud-设置-数据库" class="headerlink" title="LeanCloud 设置 (数据库)"></a>LeanCloud 设置 (数据库)</h4><h5 id="1-登录-或-注册-LeanCloud-国际版-并进入-控制台"><a href="#1-登录-或-注册-LeanCloud-国际版-并进入-控制台" class="headerlink" title="1. 登录 或 注册 LeanCloud 国际版 并进入 控制台"></a>1. <a target="_blank" rel="noopener" href="https://console.leancloud.app/login">登录</a> 或 <a target="_blank" rel="noopener" href="https://console.leancloud.app/register">注册</a> LeanCloud 国际版 并进入 <a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">控制台</a></h5><h5 id="2-点击左上角-创建应用并起一个你喜欢的名字-请选择免费的开发版"><a href="#2-点击左上角-创建应用并起一个你喜欢的名字-请选择免费的开发版" class="headerlink" title="2. 点击左上角 创建应用并起一个你喜欢的名字 (请选择免费的开发版)"></a>2. 点击左上角 <a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">创建应用</a>并起一个你喜欢的名字 (请选择免费的开发版)</h5><h5 id="3-进入应用，选择左下角的-设置-应用-Key。你可以看到你的-APP-ID-APP-Key-和-Master-Key。请记录它们，以便后续使用"><a href="#3-进入应用，选择左下角的-设置-应用-Key。你可以看到你的-APP-ID-APP-Key-和-Master-Key。请记录它们，以便后续使用" class="headerlink" title="3. 进入应用，选择左下角的 设置 &gt; 应用 Key。你可以看到你的 APP ID,APP Key 和 Master Key。请记录它们，以便后续使用"></a>3. 进入应用，选择左下角的 设置 &gt; 应用 Key。你可以看到你的 APP ID,APP Key 和 Master Key。请记录它们，以便后续使用</h5><div class="note warning"><p>国内版需要完成备案接入</p>
+<p>如果你正在使用 Leancloud 国内版 (<a target="_blank" rel="noopener" href="https://leancloud.cn/">leancloud.cn</a>)，我们推荐你切换到国际版 (leancloud.app)。否则，你需要为应用额外绑定已备案的域名，同时购买独立 IP 并完成备案接入:</p>
+<p>登录国内版并进入需要使用的应用<br>选择 设置 &gt; 域名绑定 &gt; API 访问域名 &gt; 绑定新域名 &gt; 输入域名 &gt; 确定。<br>按照页面上的提示按要求在 DNS 上完成 CNAME 解析。<br>购买独立 IP 并提交工单完成备案接入。(独立 IP 目前价格为 ￥ 50&#x2F;个&#x2F;月)</p>
+</div>
+
+<h3 id="Vercel-部署-服务端"><a href="#Vercel-部署-服务端" class="headerlink" title="Vercel 部署 (服务端)"></a>Vercel 部署 (服务端)</h3><p> <a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https://github.com/walinejs/waline/tree/main/example">Deploy</a><br> Vercel</p>
+<h6 id="1-点击上方按钮-，跳转至-Vercel-进行-Server-端部署"><a href="#1-点击上方按钮-，跳转至-Vercel-进行-Server-端部署" class="headerlink" title="1. 点击上方按钮 ，跳转至 Vercel 进行 Server 端部署"></a>1. 点击上方按钮 ，跳转至 Vercel 进行 Server 端部署</h6><p>点击上方按钮，跳转至 Vercel 进行 Server 端部署。</p>
+<div class="note warning"><p>注</p>
+<p>如果你未登录的话，Vercel 会让你注册或登录，请使用 GitHub 账户进行快捷登录。</p>
+</div>
+
+<h5 id="2-输入一个你喜欢的-Vercel-项目名称并点击-Create-继续"><a href="#2-输入一个你喜欢的-Vercel-项目名称并点击-Create-继续" class="headerlink" title="2. 输入一个你喜欢的 Vercel 项目名称并点击 Create 继续"></a>2. 输入一个你喜欢的 Vercel 项目名称并点击 Create 继续</h5><h5 id="3-此时-Vercel-会基于-Waline-模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名"><a href="#3-此时-Vercel-会基于-Waline-模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名" class="headerlink" title="3.此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名"></a>3.此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名</h5><p>一两分钟后，满屏的烟花会庆祝你部署成功。此时点击 Go to Dashboard 可以跳转到应用的控制台。</p>
+<h5 id="4-点击顶部的-Settings-Environment-Variables-进入环境变量配置页，并配置三个环境变量-LEAN-ID-LEAN-KEY-和-LEAN-MASTER-KEY-。它们的值分别对应上一步在-LeanCloud-中获得的-APP-ID-APP-KEY-Master-Key"><a href="#4-点击顶部的-Settings-Environment-Variables-进入环境变量配置页，并配置三个环境变量-LEAN-ID-LEAN-KEY-和-LEAN-MASTER-KEY-。它们的值分别对应上一步在-LeanCloud-中获得的-APP-ID-APP-KEY-Master-Key" class="headerlink" title="4.点击顶部的 Settings - Environment Variables 进入环境变量配置页，并配置三个环境变量 LEAN_ID, LEAN_KEY 和 LEAN_MASTER_KEY 。它们的值分别对应上一步在 LeanCloud 中获得的 APP ID, APP KEY, Master Key"></a>4.点击顶部的 Settings - Environment Variables 进入环境变量配置页，并配置三个环境变量 LEAN_ID, LEAN_KEY 和 LEAN_MASTER_KEY 。它们的值分别对应上一步在 LeanCloud 中获得的 APP ID, APP KEY, Master Key</h5><div class="note warning"><p>注</p>
+<p>如果你使用 LeanCloud 国内版，请额外配置 LEAN_SERVER 环境变量，值为你绑定好的域名。</p>
+</div>
+
+<h5 id="5-环境变量配置完成之后点击顶部的-Deployments-点击顶部最新的一次部署右侧的-Redeploy-按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效"><a href="#5-环境变量配置完成之后点击顶部的-Deployments-点击顶部最新的一次部署右侧的-Redeploy-按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效" class="headerlink" title="5.环境变量配置完成之后点击顶部的 Deployments 点击顶部最新的一次部署右侧的 Redeploy 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效"></a>5.环境变量配置完成之后点击顶部的 Deployments 点击顶部最新的一次部署右侧的 Redeploy 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效</h5><h5 id="6-此时会跳转到-Overview-界面开始部署，等待片刻后-STATUS-会变成-Ready。此时请点击-Visit-，即可跳转到部署好的网站地址，此地址即为你的服务端地址"><a href="#6-此时会跳转到-Overview-界面开始部署，等待片刻后-STATUS-会变成-Ready。此时请点击-Visit-，即可跳转到部署好的网站地址，此地址即为你的服务端地址" class="headerlink" title="6. 此时会跳转到 Overview 界面开始部署，等待片刻后 STATUS 会变成 Ready。此时请点击 Visit ，即可跳转到部署好的网站地址，此地址即为你的服务端地址"></a>6. 此时会跳转到 Overview 界面开始部署，等待片刻后 STATUS 会变成 Ready。此时请点击 Visit ，即可跳转到部署好的网站地址，此地址即为你的服务端地址</h5><h3 id="绑定域名-可选"><a href="#绑定域名-可选" class="headerlink" title="绑定域名 (可选)"></a>绑定域名 (可选)</h3><h5 id="1-点击顶部的-Settings-Domains-进入域名配置页"><a href="#1-点击顶部的-Settings-Domains-进入域名配置页" class="headerlink" title="1. 点击顶部的 Settings - Domains 进入域名配置页"></a>1. 点击顶部的 Settings - Domains 进入域名配置页</h5><h5 id="2-输入需要绑定的域名并点击-Add"><a href="#2-输入需要绑定的域名并点击-Add" class="headerlink" title="2.输入需要绑定的域名并点击 Add"></a>2.输入需要绑定的域名并点击 Add</h5><p>在域名服务器商处添加新的 CNAME 解析记录</p>
+<h5 id="3-在域名服务器商处添加新的-CNAME-解析记录"><a href="#3-在域名服务器商处添加新的-CNAME-解析记录" class="headerlink" title="3. 在域名服务器商处添加新的 CNAME 解析记录"></a>3. 在域名服务器商处添加新的 CNAME 解析记录</h5><table>
+<thead>
+<tr>
+<th>Type 1</th>
+<th>Name 2</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CNAME 1</td>
+<td>example 2</td>
+<td>cname.vercel-dns.com</td>
+</tr>
+</tbody></table>
+<h5 id="4-等待生效，你可以通过自己的域名来访问了🎉"><a href="#4-等待生效，你可以通过自己的域名来访问了🎉" class="headerlink" title="4. 等待生效，你可以通过自己的域名来访问了🎉"></a>4. 等待生效，你可以通过自己的域名来访问了🎉</h5><p>评论系统：example.yourdomain.com<br>评论管理：example.yourdomain.com&#x2F;ui</p>
+<h3 id="HTML-引入-客户端"><a href="#HTML-引入-客户端" class="headerlink" title="HTML 引入 (客户端)"></a>HTML 引入 (客户端)</h3><p>在你的网页中进行如下设置:</p>
+<h5 id="1-导入-Waline-样式-https-unpkg-com-waline-client-v3-dist-waline-css"><a href="#1-导入-Waline-样式-https-unpkg-com-waline-client-v3-dist-waline-css" class="headerlink" title="1.导入 Waline 样式 https://unpkg.com/@waline/client@v3/dist/waline.css"></a>1.导入 Waline 样式 <a target="_blank" rel="noopener" href="https://unpkg.com/@waline/client@v3/dist/waline.css">https://unpkg.com/@waline/client@v3/dist/waline.css</a></h5><h5 id="2-创建-标签使用来自-https-unpkg-com-waline-client-v3-dist-waline-js-的-init-函数初始化，并传入必要的-el-与-serverURL-选项"><a href="#2-创建-标签使用来自-https-unpkg-com-waline-client-v3-dist-waline-js-的-init-函数初始化，并传入必要的-el-与-serverURL-选项" class="headerlink" title="2. 创建 &lt;script&gt; 标签使用来自 https://unpkg.com/@waline/client@v3/dist/waline.js 的 init() 函数初始化，并传入必要的 el 与 serverURL 选项"></a>2. 创建 <code>&lt;script&gt;</code> 标签使用来自 <a target="_blank" rel="noopener" href="https://unpkg.com/@waline/client@v3/dist/waline.js">https://unpkg.com/@waline/client@v3/dist/waline.js</a> 的 init() 函数初始化，并传入必要的 el 与 serverURL 选项</h5><p>el 选项是 Waline 渲染使用的元素，你可以设置一个字符串形式的 CSS 选择器或者一个 HTMLElement 对象。<br>serverURL 是服务端的地址，即上一步获取到的值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span></span></span><br><span class="line"><span class="tag">    <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">href</span>=<span class="string">&quot;https://unpkg.com/@waline/client@v3/dist/waline.css&quot;</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;waline&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">import</span> &#123; init &#125; <span class="keyword">from</span> <span class="string">&#x27;https://unpkg.com/@waline/client@v3/dist/waline.js&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">init</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">el</span>: <span class="string">&#x27;#waline&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">serverURL</span>: <span class="string">&#x27;https://your-domain.vercel.app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-评论服务此时就会在你的网站上成功运行-🎉"><a href="#3-评论服务此时就会在你的网站上成功运行-🎉" class="headerlink" title="3.评论服务此时就会在你的网站上成功运行 🎉"></a>3.评论服务此时就会在你的网站上成功运行 🎉</h5><h3 id="评论管理-管理端"><a href="#评论管理-管理端" class="headerlink" title="评论管理 (管理端)"></a>评论管理 (管理端)</h3><h5 id="1-部署完成后，请访问-ui-register-进行注册。首个注册的人会被设定成管理员"><a href="#1-部署完成后，请访问-ui-register-进行注册。首个注册的人会被设定成管理员" class="headerlink" title="1.部署完成后，请访问 &lt;serverURL&gt;&#x2F;ui&#x2F;register 进行注册。首个注册的人会被设定成管理员"></a>1.部署完成后，请访问 <code>&lt;serverURL&gt;</code>&#x2F;ui&#x2F;register 进行注册。首个注册的人会被设定成管理员</h5><h5 id="2-管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论"><a href="#2-管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论" class="headerlink" title="2.管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论"></a>2.管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论</h5><h5 id="3-用户也可通过评论框注册账号，登陆后会跳转到自己的档案页"><a href="#3-用户也可通过评论框注册账号，登陆后会跳转到自己的档案页" class="headerlink" title="3.用户也可通过评论框注册账号，登陆后会跳转到自己的档案页"></a>3.用户也可通过评论框注册账号，登陆后会跳转到自己的档案页</h5><p>Next 的主题配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Waline</span></span><br><span class="line"><span class="comment"># For more information: https://waline.js.org, https://github.com/walinejs/waline</span></span><br><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment">#是否开启</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="string">waline-server-pearl.vercel.app</span> <span class="comment"># Waline #服务端地址，我们这里就是上面部署的 Vercel 地址</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">请文明评论</span> <span class="comment"># #评论框的默认文字</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像风格</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># 自定义评论框上面的三个输入框的内容</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论数量多少时显示分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn</span> <span class="comment"># 语言, 可选值: en, zh-cn</span></span><br><span class="line">  <span class="comment"># Warning: 不要同时启用 `waline.visitor` 以及 `leancloud_visitors`.</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># 文章阅读统计</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示</span></span><br><span class="line">  <span class="attr">requiredFields:</span> [] <span class="comment"># 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]</span></span><br><span class="line">  <span class="attr">libUrl:</span> <span class="comment"># Set custom library cdn url</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started/">Waline</a> | <a target="_blank" rel="noopener" href="https://lisenhui.cn/blog/use-custom-domain-active-vercel-waline.html">Vercel 访问</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -484,7 +940,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git@github.com&gt;:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p>验证 SSH 连接</p>
-<p>bash<br>ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#x6d;">git@github.com</a></p>
+<p>bash<br>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">git@github.com</a></p>
 <p>要是看到Hi &lt;用户名&gt;! You’ve successfully authenticated…，就说明连接成功了。</p>
 <p>参考：<a href="https://majiang2025.github.io/">本人博客</a></p>
 
@@ -505,744 +961,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/hexo-next/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.png">
-      <meta itemprop="name" content="Ma Jiang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2025/07/hexo-next/" class="post-title-link" itemprop="url">Hexo Next</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-07-02 09:32:49" itemprop="dateCreated datePublished" datetime="2025-07-02T09:32:49+08:00">2025-07-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 14:34:18" itemprop="dateModified" datetime="2025-07-04T14:34:18+08:00">2025-07-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Hexo Next" href="/posts/2025/07/hexo-next/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::276dbd26211f63aa0467d2c8ab28ad8e" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="一、安装-Hexo-环境"><a href="#一、安装-Hexo-环境" class="headerlink" title="一、安装 Hexo 环境"></a>一、安装 Hexo 环境</h3><h4 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h4><ul>
-<li><a target="_blank" rel="noopener" href="https://deb.nodesource.com/setup_16.x">https://deb.nodesource.com/setup_16.x</a> — Node.js 16 “Gallium” (deprecated)</li>
-<li><a target="_blank" rel="noopener" href="https://deb.nodesource.com/setup_18.x">https://deb.nodesource.com/setup_18.x</a> — Node.js 18 “Hydrogen” (Maintenance)</li>
-<li><a target="_blank" rel="noopener" href="https://deb.nodesource.com/setup_19.x">https://deb.nodesource.com/setup_19.x</a> — Node.js 19 “Nineteen” (deprecated)</li>
-<li><a target="_blank" rel="noopener" href="https://deb.nodesource.com/setup_20.x">https://deb.nodesource.com/setup_20.x</a> — Node.js 20 LTS “Iron” (recommended)</li>
-<li><a target="_blank" rel="noopener" href="https://deb.nodesource.com/setup_21.x">https://deb.nodesource.com/setup_21.x</a> — Node.js 21 “Iron” (current)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://deb.nodesource.com/setup_20.x | <span class="built_in">sudo</span> -E bash -  <span class="comment"># 推荐20.x  </span></span><br><span class="line"><span class="built_in">sudo</span> apt install -y nodejs</span><br><span class="line">node -v  <span class="comment"># 验证版本≥20</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="二、创建-Hexo-博客"><a href="#二、创建-Hexo-博客" class="headerlink" title="二、创建 Hexo 博客"></a>二、创建 Hexo 博客</h3><h4 id="安装-Hexo-CLI"><a href="#安装-Hexo-CLI" class="headerlink" title="安装 Hexo CLI"></a>安装 Hexo CLI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install hexo-cli -g</span><br><span class="line">hexo -v  <span class="comment"># 验证安装</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="创建-Hexo-博客"><a href="#创建-Hexo-博客" class="headerlink" title="创建 Hexo 博客"></a>创建 Hexo 博客</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog &amp;&amp; <span class="built_in">cd</span> myblog</span><br><span class="line">npm install  <span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="安装-Next-主题"><a href="#安装-Next-主题" class="headerlink" title="安装 Next 主题"></a>安装 Next 主题</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、配置-Next-主题"><a href="#三、配置-Next-主题" class="headerlink" title="三、配置 Next 主题"></a>三、配置 Next 主题</h3><h4 id="修改-Hexo-主配置"><a href="#修改-Hexo-主配置" class="headerlink" title="修改 Hexo 主配置"></a>修改 Hexo 主配置</h4><p>编辑nano _config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本信息</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">XXX’s</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">XXX</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 主题设置</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL设置（替换为你的域名）</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://XXX</span></span><br><span class="line"><span class="comment"># 永久链接格式</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:year/:month/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署配置（后续使用Nginx部署）</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">rsync</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">XXX</span></span><br><span class="line">  <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">  <span class="attr">root:</span> <span class="string">/var/www/myblog</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">22</span></span><br><span class="line">  <span class="attr">delete:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">verbose:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ignore_errors:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">args:</span> <span class="string">--exclude=.DS_Store</span> <span class="string">--exclude=*.tmp</span>  <span class="comment"># 排除临时文件</span></span><br><span class="line">  <span class="attr">timeout:</span> <span class="number">60</span>  <span class="comment"># 增加超时时间</span></span><br></pre></td></tr></table></figure>
-
-<p>  本地测试运行‌</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 检查主题生效</p>
-<h4 id="自定义-Next-主题"><a href="#自定义-Next-主题" class="headerlink" title="自定义 Next 主题"></a>自定义 Next 主题</h4><p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主题风格（可选Muse/Mist/Pisces/Gemini）</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 菜单配置</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">/search/</span> <span class="string">||</span> <span class="string">search</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 侧边栏配置</span></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span></span><br><span class="line">  <span class="attr">display:</span> <span class="string">always</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 社交链接</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/your_username</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line">  <span class="attr">Twitter:</span> <span class="string">https://twitter.com/your_username</span> <span class="string">||</span> <span class="string">twitter</span></span><br><span class="line">  <span class="attr">LinkedIn:</span> <span class="string">https://linkedin.com/in/your_username</span> <span class="string">||</span> <span class="string">linkedin</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 评论系统（示例：使用Gitalk）</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">gitalk</span></span><br><span class="line">  <span class="attr">gitalk:</span></span><br><span class="line">    <span class="attr">clientID:</span> <span class="string">your_client_id</span></span><br><span class="line">    <span class="attr">clientSecret:</span> <span class="string">your_client_secret</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">your_repo</span></span><br><span class="line">    <span class="attr">owner:</span> <span class="string">your_username</span></span><br><span class="line">    <span class="attr">admin:</span> [<span class="string">&#x27;your_username&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、安装并配置-Nginx"><a href="#四、安装并配置-Nginx" class="headerlink" title="四、安装并配置 Nginx"></a>四、安装并配置 Nginx</h3><h4 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install nginx -y</span><br><span class="line"><span class="built_in">sudo</span> systemctl start nginx</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> nginx</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置-Nginx-虚拟主机"><a href="#配置-Nginx-虚拟主机" class="headerlink" title="配置 Nginx 虚拟主机"></a>配置 Nginx 虚拟主机</h4><p>创建配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/nginx/sites-available/myblog</span><br></pre></td></tr></table></figure>
-
-<p>  添加以下内容（替换为你的域名）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name  XXX;  # 替换为你的域名</span><br><span class="line">    root /var/www/myblog;</span><br><span class="line">    index index.html index.htm;</span><br><span class="line">    location / &#123;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">        gzip on;</span><br><span class="line">        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>启用配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /etc/nginx/sites-available/myblog /etc/nginx/sites-enabled/</span><br><span class="line"><span class="built_in">sudo</span> nginx -t  <span class="comment"># 验证配置</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h3><h4 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用sudo以root权限创建目录</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /var/www/myblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改目录所有者为当前用户（如ubuntu）</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R ubuntu:www-data /var/www/myblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置适当的权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> -R 755 /var/www/myblog</span><br><span class="line">  </span><br><span class="line">hexo d <span class="comment"># 将文件复制到/var/www/html/（根据deploy配置）</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="六、-优化"><a href="#六、-优化" class="headerlink" title="六、 优化"></a>六、 优化</h3><h4 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h4><p>编辑nano themes&#x2F;next&#x2F;_config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># 小图标（16x16）</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># 中图标（32x32）</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># Apple 设备图标</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/favicon.png</span>  <span class="comment"># Safari 固定标签页图标</span></span><br><span class="line">  <span class="comment">#small: /images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="comment">#medium: /images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="comment">#safari_pinned_tab: /images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
-
-<p>把头像文件放在 myblog&#x2F;source&#x2F;images 下</p>
-<h4 id="打赏"><a href="#打赏" class="headerlink" title="打赏"></a>打赏</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Donate (Sponsor) settings</span></span><br><span class="line"><span class="comment"># Front-matter variable (nonsupport animation).</span></span><br><span class="line"><span class="attr">reward_settings:</span></span><br><span class="line">  <span class="comment"># If true, a donate button will be displayed in every article by default.</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">reward:</span></span><br><span class="line">  <span class="attr">wechatpay:</span> <span class="string">/images/wechatpay.png</span></span><br><span class="line">  <span class="comment">#alipay: /images/alipay.png</span></span><br><span class="line">  <span class="comment">#paypal: /images/paypal.png</span></span><br><span class="line">  <span class="comment">#bitcoin: /images/bitcoin.png</span></span><br></pre></td></tr></table></figure>
-
-<p>把图片文件放在 myblog&#x2F;themes&#x2F;next&#x2F;source&#x2F;images 下</p>
-<h4 id="Hexo-NexT-本地搜索"><a href="#Hexo-NexT-本地搜索" class="headerlink" title="Hexo NexT 本地搜索"></a>Hexo NexT 本地搜索</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<p>配置站点文件</p>
-<p>编辑 myblog&#x2F;themes&#x2F;next 下配置文件 _config.yml，新增以下内容：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">field:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-
-<p>配置主题文件</p>
-<p>编辑主题配置文件 _config.yml，启用本地搜索功能：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>禁用 Algolia 搜索</p>
-<p>如果 Algolia 搜索和本地搜索同时启用，可能会导致冲突。可以在主题配置文件中禁用 Algolia 搜索：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>完成以上步骤后，重新生成并部署站点：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>这样就可以在 Hexo 的 NexT 主题中使用本地搜索功能了</p>
-<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><p>编辑 nano themes&#x2F;next&#x2F;_config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lazyload:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>图片懒加载</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-lazyload-image --save</span><br></pre></td></tr></table></figure>
-
-<p>编辑 nano _config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">lazyload:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 启用懒加载</span></span><br><span class="line">  <span class="attr">onlypost:</span> <span class="literal">false</span>  <span class="comment"># 是否只对文章中的图片生效</span></span><br><span class="line">  <span class="attr">loadingImg:</span> <span class="string">&quot;&quot;</span>  <span class="comment"># 自定义加载中的占位图路径</span></span><br><span class="line">  <span class="attr">errorImg:</span> <span class="string">&quot;&quot;</span>  <span class="comment"># 图片加载失败时显示的图片路径</span></span><br><span class="line">  <span class="attr">quality:</span> <span class="number">80</span>  <span class="comment"># 图片质量（仅对生成的响应式图片有效）</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译"><a href="#增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译" class="headerlink" title="增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译"></a>增加站点访客、文章阅读量、字符统计、阅读时间统计与对应词条翻译</h4><h5 id="字符统计、阅读时间统计"><a href="#字符统计、阅读时间统计" class="headerlink" title="字符统计、阅读时间统计"></a>字符统计、阅读时间统计</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-
-<p>编辑 nano _config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>                <span class="comment"># 文章字数统计</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                   <span class="comment"># 文章阅读时长</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>          <span class="comment"># 站点总字数统计</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>             <span class="comment"># 站点总阅读时长</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>     <span class="comment"># 排除代码字数统计</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑 nano themes&#x2F;next&#x2F;_config.yml：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-word-counter</span></span><br><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h4><p>生成分类页面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>生成后，编辑 source&#x2F;categories&#x2F;index.md 文件，添加以下内容：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">title: 分类</span><br><span class="line">date: YYYY-MM-DD HH:MM:SS</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">layout: &quot;categories&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<p>生成标签页面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>生成后，编辑 source&#x2F;tags&#x2F;index.md 文件，添加以下内容：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">title: 标签</span><br><span class="line">date: YYYY-MM-DD HH:MM:SS</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">layout: &quot;tags&quot;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<p>在菜单中添加链接<br>编辑主题配置文件 themes&#x2F;next&#x2F;_config.yml，找到 menu 字段，添加分类和标签的菜单链接：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th-large</span>  <span class="comment"># th-large 是 Font Awesome 图标类名</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
-
-<p>在撰写文章时，通过 Front-matter 配置分类和标签：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">title: &quot;Hexo Next 主题配置指南&quot;</span><br><span class="line">date: 2025-07-02 10:00:00</span><br><span class="line">categories: 技术 # 分类（可多层级，如 &quot;技术/Hexo&quot;）</span><br><span class="line">tags:</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> Hexo</span><br><span class="line"><span class="bullet">-</span> Next主题</span><br><span class="line"><span class="bullet">-</span> 博客搭建</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">文章内容...</span><br></pre></td></tr></table></figure>
-
-<p>多层级分类示例：categories: 技术&#x2F;博客&#x2F;Hexo，会生成层级结构 技术 &gt; 博客 &gt; Hexo。<br>标签格式：可使用数组格式（如上）或逗号分隔（如 tags: Hexo, Next主题, 博客搭建）。</p>
-<h4 id="Hexo-分页设置"><a href="#Hexo-分页设置" class="headerlink" title="Hexo 分页设置"></a>Hexo 分页设置</h4><p>在 Hexo 中设置分页可以让你的博客更易于浏览。你可以通过修改配置文件 _config.yml 来实现分页功能。</p>
-<p>示例</p>
-<p>首先，确保你已经安装了必要的插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br></pre></td></tr></table></figure>
-
-<p>然后，在你的主题配置文件 _config.yml 中进行如下修改：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 主页每页显示文章数</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 归档分页每页显示文章数</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 标签分页每页显示文章数</span></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分类分页每页显示文章数</span></span><br><span class="line"><span class="attr">category_generator:</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<p>注意事项</p>
-<p>插件安装：确保你已经安装了 hexo-generator-index、hexo-generator-archive 和 hexo-generator-tag 插件。</p>
-<p>配置文件：在 _config.yml 文件中正确设置 per_page 参数，以控制每页显示的文章数量。</p>
-<p>通过以上步骤，你可以轻松地在 Hexo 博客中实现分页功能，使你的博客更加整洁和易于导航。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.png">
-      <meta itemprop="name" content="Ma Jiang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2025/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-07-02 09:01:08" itemprop="dateCreated datePublished" datetime="2025-07-02T09:01:08+08:00">2025-07-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 14:34:08" itemprop="dateModified" datetime="2025-07-04T14:34:08+08:00">2025-07-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Hello World" href="/posts/2025/07/hello-world/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::8c245fd587f7603b057cf855c395c62d" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>363</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/markdown/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.png">
-      <meta itemprop="name" content="Ma Jiang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/2025/07/markdown/" class="post-title-link" itemprop="url">Mark Down</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-07-02 08:58:08" itemprop="dateCreated datePublished" datetime="2025-07-02T08:58:08+08:00">2025-07-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-04 14:34:24" itemprop="dateModified" datetime="2025-07-04T14:34:24+08:00">2025-07-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Mark Down" href="/posts/2025/07/markdown/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::a1a0075235b74748ad40d59c8992532b" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>这是一篇讲解如何正确使用 <strong>Markdown</strong> 的排版示例，学会这个很有必要，能让你的文章有更佳清晰的排版。</p>
-<blockquote>
-<p>引用文本：Markdown is a text formatting syntax.</p>
-</blockquote>
-<h2 id="语法指导"><a href="#语法指导" class="headerlink" title="语法指导"></a>语法指导</h2><h3 id="普通内容"><a href="#普通内容" class="headerlink" title="普通内容"></a>普通内容</h3><p>这段内容展示了在内容里面一些排版格式，比如：</p>
-<ul>
-<li><strong>加粗</strong> - <code>**加粗**</code></li>
-<li><em>倾斜</em> - <code>*倾斜*</code></li>
-<li><del>删除线</del> - <code>~~删除线~~</code></li>
-<li><code>Code 标记</code> - <code>`Code 标记`</code></li>
-<li><a target="_blank" rel="noopener" href="https://lddgo.net/">超级链接</a> - <code>[超级链接](https://lddgo.net)</code></li>
-<li><a href="mailto:&#x75;&#x73;&#101;&#x72;&#x6e;&#97;&#x6d;&#x65;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">username@gmail.com</a> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
-</ul>
-<h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H1 至 H6，使用 ##(N) 打头。</p>
-<blockquote>
-<p>NOTE: 别忘了 # 后面需要有空格！</p>
-</blockquote>
-<h4 id="Heading-4"><a href="#Heading-4" class="headerlink" title="Heading 4"></a>Heading 4</h4><h5 id="Heading-5"><a href="#Heading-5" class="headerlink" title="Heading 5"></a>Heading 5</h5><h6 id="Heading-6"><a href="#Heading-6" class="headerlink" title="Heading 6"></a>Heading 6</h6><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![alt 文本](http://image-path.png)</span><br><span class="line">![alt 文本](http://image-path.png &quot;图片 Title 值&quot;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><h4 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*emphasize*    **strong**</span><br><span class="line">_emphasize_    __strong__</span><br><span class="line">var a = 1</span><br></pre></td></tr></table></figure>
-
-<h4 id="语法高亮支持"><a href="#语法高亮支持" class="headerlink" title="语法高亮支持"></a>语法高亮支持</h4><p>如果在 &#96;&#96;&#96; 后面跟随语言名称，可以有语法高亮的效果哦，比如:</p>
-<h5 id="演示-Go-代码高亮"><a href="#演示-Go-代码高亮" class="headerlink" title="演示 Go 代码高亮"></a>演示 Go 代码高亮</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"> fmt.Println(<span class="string">&quot;Hello, 世界&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="演示-Java-高亮"><a href="#演示-Java-高亮" class="headerlink" title="演示 Java 高亮"></a>演示 Java 高亮</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Tip: 语言名称支持下面这些: <code>ruby</code>, <code>python</code>, <code>js</code>, <code>html</code>, <code>erb</code>, <code>css</code>, <code>coffee</code>, <code>bash</code>, <code>json</code>, <code>yml</code>, <code>xml</code> …</p>
-</blockquote>
-<h3 id="有序、无序、任务列表"><a href="#有序、无序、任务列表" class="headerlink" title="有序、无序、任务列表"></a>有序、无序、任务列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>
-<li>Java<ul>
-<li>Spring<ul>
-<li>IoC</li>
-<li>AOP</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Go<ul>
-<li>gofmt</li>
-<li>Wide</li>
-</ul>
-</li>
-<li>Node.js<ul>
-<li>Koa</li>
-<li>Express</li>
-</ul>
-</li>
-</ul>
-<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><ol>
-<li>Node.js<ol>
-<li>Express</li>
-<li>Koa</li>
-<li>Sails</li>
-</ol>
-</li>
-<li>Go<ol>
-<li>gofmt</li>
-<li>Wide</li>
-</ol>
-</li>
-<li>Java<ol>
-<li>Latke</li>
-<li>IDEA</li>
-</ol>
-</li>
-</ol>
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><ul>
-<li><input checked="" disabled="" type="checkbox"> 发布 任务1</li>
-<li><input checked="" disabled="" type="checkbox"> 发布 任务2</li>
-<li><input disabled="" type="checkbox"> 预约 任务3</li>
-</ul>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>如果需要展示数据什么的，可以选择使用表格。</p>
-<table>
-<thead>
-<tr>
-<th>header 1</th>
-<th>header 2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cell 1</td>
-<td>cell 2</td>
-</tr>
-<tr>
-<td>cell 3</td>
-<td>cell 4</td>
-</tr>
-<tr>
-<td>cell 5</td>
-<td>cell 6</td>
-</tr>
-</tbody></table>
-<h3 id="隐藏细节"><a href="#隐藏细节" class="headerlink" title="隐藏细节"></a>隐藏细节</h3><details>
-<summary>这里是摘要部分。</summary>
-这里是细节部分。
-</details>
-
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><p>空行可以将内容进行分段，便于阅读。（这是第一段）</p>
-<p>使用空行在 Markdown 排版中相当重要。（这是第二段）</p>
-<h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80">链接文本</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.lddgo.net/string/markdown-editor">LDDGO.NET</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">Markdown 教程</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接文本](链接地址)</span><br></pre></td></tr></table></figure>
-
-<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><details>
-
-<summary>设置</summary>
-
-<p>编辑 nano &#x2F;themes&#x2F;next&#x2F;_config.yml</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: none | ams | all</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">none</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑 nano markdown.md</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Markdown</span><br><span class="line">author: Ma Jiang</span><br><span class="line">date: 2025-07-02 16:04:08</span><br><span class="line">tags: Markdown</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-</details>
-
-<p>多行公式块：</p>
-<p>$$<br>\frac{1}{<br>  \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{<br>  \frac25 \pi}} &#x3D; 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {<br>    1+\frac{e^{-6\pi}}<br>    {1+\frac{e^{-8\pi}}{1+\cdots}}<br>  }<br>}<br>$$</p>
-<p>行内公式：</p>
-<p>公式 $a^2 + b^2 &#x3D; color{red}c^2$ 是行内。</p>
-<h3 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h3><p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/tag-plugins/mermaid">Mermaid</a></p>
-<details>
-
-<summary>设置</summary>
-
-<p>NexT config file</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mermaid tag</span></span><br><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available themes: default | dark | forest | neutral</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">dark</span></span><br></pre></td></tr></table></figure>
-
-<p>Hexo config file</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">exclude_languages:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mermaid</span></span><br></pre></td></tr></table></figure>
-
-<p>Usage</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid type %&#125;</span><br><span class="line">&#123;% endmermaid %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>or</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`` `</span><br><span class="line">  mermaid</span><br><span class="line">  type</span><br><span class="line">`` `</span><br></pre></td></tr></table></figure>
-
-</details>
-
-<pre><code class="highlight mermaid">mindmap
- 教程
-   语法指导
-   普通内容
-   大标题
-     Heading 3
-     Heading 4
-       Heading 5
-         Heading 6
-   图片
-   代码块
-     普通
-     语法高亮支持
-       演示 Go 代码高亮
-       演示 Java 高亮
-   有序、无序、任务列表
-     无序列表
-     有序列表
-     任务列表
-   表格
-   隐藏细节
-   段落
-   链接引用
-   数学公式
-   脑图
-   流程图
-   时序图
-   甘特图
-   图表
-   五线谱
-   Graphviz
-   脚注</code></pre>
-
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><pre><code class="highlight mermaid">graph TD
-c1--&gt;a2
-    subgraph one
-    a1--&gt;a2
-    end
-    subgraph two
-    b1--&gt;b2
-    end
-    subgraph three
-    c1--&gt;c2
-    end</code></pre>
-
-<h3 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h3><pre><code class="highlight mermaid">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop Every minute
-        John--&gt;&gt;Alice: Great!
-    end</code></pre>
-
-<h3 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h3><pre><code class="highlight mermaid">gantt
-
-title A Gantt Diagram
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2019-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2019-01-12  , 12d
-    another task      : 24d
-</code></pre>
-
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><h4 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h4><pre><code class="highlight mermaid">pie
-&quot;Dogs&quot; : 386
-&quot;Cats&quot; : 85
-&quot;Rats&quot; : 15
-</code></pre>
-
-<h3 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a>Flowchart</h3><pre><code class="highlight mermaid">flowchart TD
-    A[Start] --&gt; B&#123;Is it?&#125;
-    B -- Yes --&gt; C[OK]
-    C --&gt; D[Rethink]
-    D --&gt; B
-    B -- No ----&gt; E[End]
-</code></pre>
-
-<h3 id="Graphviz"><a href="#Graphviz" class="headerlink" title="Graphviz"></a>Graphviz</h3><details>
-
-<summary>设置</summary>
-
-<h4 id="hexo-graphviz"><a href="#hexo-graphviz" class="headerlink" title="hexo-graphviz"></a>hexo-graphviz</h4><p>Plugin for Hexo which renders Graphviz plots</p>
-<h5 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h5><h6 id="Install-Package"><a href="#Install-Package" class="headerlink" title="Install Package"></a>Install Package</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add hexo-graphviz</span><br></pre></td></tr></table></figure>
-
-<h6 id="Edit-Config"><a href="#Edit-Config" class="headerlink" title="Edit Config"></a>Edit Config</h6><p>After installed, you should edit hexo config file: <code>_config.yml</code>:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-graphviz</span></span><br><span class="line"><span class="attr">graphviz:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="Include-viz-js-in-njk"><a href="#Include-viz-js-in-njk" class="headerlink" title="Include viz.js in njk"></a>Include <code>viz.js</code> in <code>njk</code></h6><p>After editing <code>_config.yml</code>, you shoud be able to edit your blog page component like <code>after-footer.ejs</code> or a <code>njk</code> file which can be found inside the <code>themes/layout/_partials/</code> directory.</p>
-<p>The following code should be added in the file <code>footer.njk</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.graphviz.enable %&#125;</span><br><span class="line">  &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js&#x27;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    String.prototype.replaceAll = function(search, replacement) &#123;</span><br><span class="line">      var target = this;</span><br><span class="line">      return target.split(search).join(replacement);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    let vizObjects = document.querySelectorAll(&#x27;.graphviz&#x27;)</span><br><span class="line"></span><br><span class="line">    for (let item of vizObjects) &#123;</span><br><span class="line">      let svg = undefined</span><br><span class="line">      try &#123;</span><br><span class="line">        svg = Viz(item.textContent.replaceAll(&#x27;–&#x27;, &#x27;--&#x27;), &#x27;svg&#x27;)</span><br><span class="line">      &#125; catch(e) &#123;</span><br><span class="line">        svg = `&lt;pre class=&quot;error&quot;&gt;$&#123;e&#125;&lt;/pre&gt;`</span><br><span class="line">      &#125;</span><br><span class="line">      item.outerHTML = svg</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h5><p>The graphviz block can be written inside a  graphviz  codeblock.</p>
-</details>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">digraph finite_state_machine &#123;</span><br><span class="line">    rankdir=LR;</span><br><span class="line">    size=&quot;8,5&quot;</span><br><span class="line">    node [shape = doublecircle]; S;</span><br><span class="line">    node [shape = point ]; qi</span><br><span class="line"></span><br><span class="line">    node [shape = circle];</span><br><span class="line">    qi -&gt; S;</span><br><span class="line">    S  -&gt; q1 [ label = &quot;a&quot; ];</span><br><span class="line">    S  -&gt; S  [ label = &quot;a&quot; ];</span><br><span class="line">    q1 -&gt; S  [ label = &quot;a&quot; ];</span><br><span class="line">    q1 -&gt; q2 [ label = &quot;ddb&quot; ];</span><br><span class="line">    q2 -&gt; q1 [ label = &quot;b&quot; ];</span><br><span class="line">    q2 -&gt; q2 [ label = &quot;b&quot; ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="五线谱"><a href="#五线谱" class="headerlink" title="五线谱"></a>五线谱</h3><details>
-<summary>设置</summary>
-
-<h4 id="hexo-tag-abcjs"><a href="#hexo-tag-abcjs" class="headerlink" title="hexo-tag-abcjs"></a>hexo-tag-abcjs</h4><blockquote>
-<p>Helps you to render standard music notation with abcjs on your blog posts</p>
-</blockquote>
-<h5 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-abcjs</span><br></pre></td></tr></table></figure>
-
-<h5 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h5><p>You can configure this plugin in _config.yml.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">abcjs:</span><br><span class="line">  js: &#x27;/js/abcjs_midi_5.9.1-min.js&#x27;,</span><br><span class="line">  css: &#x27;/css/abcjs-midi.css&#x27;,</span><br><span class="line">  midi: true,</span><br><span class="line">  animation: true,</span><br><span class="line">  animationColors: [&#x27;#000000&#x27;, &#x27;#3d9afc&#x27;]</span><br><span class="line">  options: &#123;</span><br><span class="line">    startingTune: 0,</span><br><span class="line">    print: false,</span><br><span class="line">    visualTranspose: 0,</span><br><span class="line">    scale: 1,</span><br><span class="line">    responsive: &#x27;resize&#x27;,</span><br><span class="line">    inlineControls: &#123;</span><br><span class="line">      loopToggle: true,</span><br><span class="line">      standard: true,</span><br><span class="line">      tooltipLoop: &#x27;Click to toggle play once/repeat.&#x27;,</span><br><span class="line">      tooltipReset: &#x27;Click to go to beginning.&#x27;,</span><br><span class="line">      tooltipPlay: &#x27;Click to play/pause.&#x27;,</span><br><span class="line">      tooltipProgress: &#x27;Click to change the playback position.&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  scriptId: &#x27;hexo-tag-abcjs&#x27;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>js</strong> - The abcjs library url. default: <code>/js/abcjs_midi_5.9.1-min.js</code></li>
-<li><strong>css</strong> - The abcjs style url. default: <code>/css/abcjs-midi.css</code></li>
-<li><strong>midi</strong> - Whether enable midi audio. default: <code>true</code></li>
-<li><strong>animation</strong> - Whether enable absjs animation. When true, highlights the current notation. default: <code>true</code></li>
-<li><strong>animationColors</strong> - The animated notation color. default: <code>[&#39;#000000&#39;, &#39;#3d9afc&#39;]</code></li>
-<li><strong>options</strong> - The abcjs Configuration. default as above</li>
-<li><strong>scriptId</strong> - The id of inserted script tag. default: <code>hexo-tag-abcjs</code></li>
-</ul>
-<h5 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% abcjs [autoplay] [no-midi] [no-animation] %&#125;</span><br><span class="line">here is your abcString</span><br><span class="line">&#123;% endabcjs %&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>autoplay</strong> - Enable autoplay</li>
-<li><strong>no-midi</strong> - Disabled midi audio</li>
-<li><strong>no-animation</strong> - Disabled audio animation</li>
-</ul>
-<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><p>The following is a simple demo:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% abcjs autoplay %&#125;</span><br><span class="line">X: 22</span><br><span class="line">T:Money Lost</span><br><span class="line">M:3/4</span><br><span class="line">L:1/8</span><br><span class="line">Q:1/4=100</span><br><span class="line">C:Paul Rosen</span><br><span class="line">S:Copyright 2007, Paul Rosen</span><br><span class="line">R:Klezmer</span><br><span class="line">K:Dm</span><br><span class="line">Ade|:&quot;Dm&quot;(f2d)e gf|&quot;A7&quot;e2^c4|&quot;Gm&quot;B&gt;&gt;^c BA BG|&quot;A&quot;A3Ade|&quot;Dm&quot;(f2d)e gf|&quot;A7&quot;e2^c4|</span><br><span class="line">&quot;Gm&quot;A&gt;&gt;B &quot;A7&quot;AG FE|1&quot;Dm&quot;D3Ade:|2&quot;Dm&quot;D3DEF||:&quot;Gm&quot;(G2D)E FG|&quot;Dm&quot;A2F4|&quot;Gm&quot;B&gt;&gt;c &quot;A7&quot;BA BG|</span><br><span class="line">&quot;Dm&quot;A3 DEF|&quot;Gm&quot;(G2D)EFG|&quot;Dm&quot;A2F4|&quot;E°&quot;E&gt;&gt;Fy &quot;(A7)&quot;ED^C2|1&quot;Dm&quot;D3DEF:|2&quot;Dm&quot;D6||</span><br><span class="line">&#123;% endabcjs %&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">X: 24</span><br><span class="line">T: Clouds Thicken</span><br><span class="line">C: Paul Rosen</span><br><span class="line">S: Copyright 2005, Paul Rosen</span><br><span class="line">M: 6/8</span><br><span class="line">L: 1/8</span><br><span class="line">Q: 3/8=116</span><br><span class="line">R: Creepy Jig</span><br><span class="line">K: Em</span><br><span class="line">|:&quot;Em&quot;EEE E2G|&quot;C7&quot;_B2A G2F|&quot;Em&quot;EEE E2G|&quot;C7&quot;_B2A &quot;B7&quot;=B3|&quot;Em&quot;EEE E2G|</span><br><span class="line">&quot;C7&quot;_B2A G2F|&quot;Em&quot;GFE &quot;D (Bm7)&quot;F2D|1&quot;Em&quot;E3-E3:|2&quot;Em&quot;E3-E2B|:&quot;Em&quot;e2e gfe|</span><br><span class="line">&quot;G&quot;g2ab3|&quot;Em&quot;gfeg2e|&quot;D&quot;fedB2A|&quot;Em&quot;e2e gfe|&quot;G&quot;g2ab3|&quot;Em&quot;gfe&quot;D&quot;f2d|&quot;Em&quot;e3-e3:|</span><br></pre></td></tr></table></figure>
-
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>这里是一个脚注引用<a href="%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%84%9A%E6%B3%A8%E5%AE%9A%E4%B9%89%E3%80%82">^1</a>，这里是另一个脚注引用<a href="%E8%84%9A%E6%B3%A8%E5%AE%9A%E4%B9%89%E5%8F%AF%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%AE%B5%E5%86%85%E5%AE%B9%E3%80%82">^bignote</a>。</p>
-<p>缩进对齐的段落包含在这个脚注定义内。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以使用代码块。</span><br></pre></td></tr></table></figure>
-
-<p>还有其他行级排版语法，比如<strong>加粗</strong>和<a target="_blank" rel="noopener" href="https://lddgo.net/">链接</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这里是一个脚注引用[^1]，这里是另一个脚注引用[^bignote]。</span><br><span class="line">    缩进对齐的段落包含在这个脚注定义内。</span><br><span class="line">    `` `</span><br><span class="line">可以使用代码块。</span><br><span class="line">    `` `</span><br><span class="line">    还有其他行级排版语法，比如**加粗**和[链接](https://lddgo.net)。</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
@@ -1264,14 +985,14 @@ title A Gantt Diagram
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">22k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

@@ -19,27 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"majiang2025.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="畅言 （中国）畅言是业界领先的社交评论系统，同时支持 PC 端和移动端的访问方式，提供了一种全新的网站评论方式。畅言拥有多种常用账号登录、三重过滤机制、实时数据统计、数据快速导出、全面支持移动端等领先功能。完全满足各大网站的用户登录、评论、分享、审核需求。 1. 创建账号或登录畅言，然后添加站点以获取 APP ID 和 APP KEY注册账户： 用户类型:   通用网站用户（一般网站用户选择此项）">
+    <meta name="description" content="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下1. 安装 Node.js 14.xcode-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装： 12345# 添加 NodeSource 仓库curl -sL https:&#x2F;&#x2F;deb.nodesource.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chang Yan">
-<meta property="og:url" content="https://majiang2025.github.io/posts/2025/07/changyan/index.html">
+<meta property="og:title" content="Code Server">
+<meta property="og:url" content="https://majiang2025.github.io/posts/2025/07/code-server/index.html">
 <meta property="og:site_name" content="Ma Jiang&#39;s Blog">
-<meta property="og:description" content="畅言 （中国）畅言是业界领先的社交评论系统，同时支持 PC 端和移动端的访问方式，提供了一种全新的网站评论方式。畅言拥有多种常用账号登录、三重过滤机制、实时数据统计、数据快速导出、全面支持移动端等领先功能。完全满足各大网站的用户登录、评论、分享、审核需求。 1. 创建账号或登录畅言，然后添加站点以获取 APP ID 和 APP KEY注册账户： 用户类型:   通用网站用户（一般网站用户选择此项）">
+<meta property="og:description" content="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下1. 安装 Node.js 14.xcode-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装： 12345# 添加 NodeSource 仓库curl -sL https:&#x2F;&#x2F;deb.nodesource.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-04T05:46:18.000Z">
-<meta property="article:modified_time" content="2025-07-04T08:27:49.452Z">
+<meta property="article:published_time" content="2025-07-10T08:31:46.000Z">
+<meta property="article:modified_time" content="2025-07-10T08:55:45.379Z">
 <meta property="article:author" content="Ma Jiang">
-<meta property="article:tag" content="chang-yan">
+<meta property="article:tag" content="code-server">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://majiang2025.github.io/posts/2025/07/changyan/">
+<link rel="canonical" href="https://majiang2025.github.io/posts/2025/07/code-server/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://majiang2025.github.io/posts/2025/07/changyan/","path":"posts/2025/07/changyan/","title":"Chang Yan"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://majiang2025.github.io/posts/2025/07/code-server/","path":"posts/2025/07/code-server/","title":"Code Server"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Chang Yan | Ma Jiang's Blog</title>
+<title>Code Server | Ma Jiang's Blog</title>
   
 
 
@@ -174,7 +174,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%85%E8%A8%80-%EF%BC%88%E4%B8%AD%E5%9B%BD%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">畅言 （中国）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA%E8%B4%A6%E5%8F%B7%E6%88%96%E7%99%BB%E5%BD%95%E7%95%85%E8%A8%80%EF%BC%8C%E7%84%B6%E5%90%8E%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E4%BB%A5%E8%8E%B7%E5%8F%96-APP-ID-%E5%92%8C-APP-KEY"><span class="nav-number">1.1.</span> <span class="nav-text">1. 创建账号或登录畅言，然后添加站点以获取 APP ID 和 APP KEY</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%B0%86%E5%8F%96%E5%80%BC-enable-%E8%AE%BE%E7%BD%AE%E4%B8%BA-true-%EF%BC%8C%E5%B9%B6%E5%B0%86%E8%8E%B7%E5%8F%96%E7%9A%84-APP-ID%EF%BC%88-appid-%EF%BC%89%E5%92%8C-APP-KEY%EF%BC%88-appkey-%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%88%B0-NexT-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84-changyan-Section-%E4%B8%AD%EF%BC%8C%E5%A6%82%E4%B8%8B%E6%89%80%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-Ubuntu-16-04-Server-%E4%B8%8A%E5%AE%89%E8%A3%85-code-server%EF%BC%88Web-%E7%89%88-VSCode%EF%BC%89%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B"><span class="nav-number">1.</span> <span class="nav-text">在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85-Node-js-14-x"><span class="nav-number">1.1.</span> <span class="nav-text">1. 安装 Node.js 14.x</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85-code-server"><span class="nav-number">1.2.</span> <span class="nav-text">2. 安装 code-server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE-code-server"><span class="nav-number">1.3.</span> <span class="nav-text">3. 配置 code-server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%88%9B%E5%BB%BA-Systemd-%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.4.</span> <span class="nav-text">4. 创建 Systemd 服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%B9%B6%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">1.5.</span> <span class="nav-text">5. 启动服务并设置开机自启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99%EF%BC%88%E5%A6%82%E6%9E%9C%E5%90%AF%E7%94%A8%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">6. 配置防火墙（如果启用）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E8%AE%BF%E9%97%AE-Web-%E7%95%8C%E9%9D%A2"><span class="nav-number">1.7.</span> <span class="nav-text">7. 访问 Web 界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">1.8.</span> <span class="nav-text">常见问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%86%85%E5%AD%98%E4%B8%8D%E8%B6%B3"><span class="nav-number">1.8.1.</span> <span class="nav-text">1.内存不足</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -244,7 +244,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/changyan/">
+    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/code-server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/favicon.png">
@@ -257,12 +257,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Chang Yan | Ma Jiang's Blog">
+      <meta itemprop="name" content="Code Server | Ma Jiang's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Chang Yan
+          Code Server
         </h1>
 
         <div class="post-meta-container">
@@ -274,7 +274,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-07-04 13:46:18 / 修改时间：16:27:49" itemprop="dateCreated datePublished" datetime="2025-07-04T13:46:18+08:00">2025-07-04</time>
+      <time title="创建时间：2025-07-10 16:31:46 / 修改时间：16:55:45" itemprop="dateCreated datePublished" datetime="2025-07-10T16:31:46+08:00">2025-07-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +282,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Changyan/" itemprop="url" rel="index"><span itemprop="name">Changyan</span></a>
+          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
         </span>
     </span>
 
@@ -295,8 +295,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="Chang Yan" href="/posts/2025/07/changyan/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::2618c959ceabb09af2b9f13e62d027ea" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Code Server" href="/posts/2025/07/code-server/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::d6c5729a800c563b66965db251e45a18" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -306,7 +306,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>941</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -323,36 +323,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="畅言-（中国）"><a href="#畅言-（中国）" class="headerlink" title="畅言 （中国）"></a>畅言 （中国）</h3><p>畅言是业界领先的社交评论系统，同时支持 PC 端和移动端的访问方式，提供了一种全新的网站评论方式。畅言拥有多种常用账号登录、三重过滤机制、实时数据统计、数据快速导出、全面支持移动端等领先功能。完全满足各大网站的用户登录、评论、分享、审核需求。</p>
-<h4 id="1-创建账号或登录畅言，然后添加站点以获取-APP-ID-和-APP-KEY"><a href="#1-创建账号或登录畅言，然后添加站点以获取-APP-ID-和-APP-KEY" class="headerlink" title="1. 创建账号或登录畅言，然后添加站点以获取 APP ID 和 APP KEY"></a>1. 创建账号或登录<a target="_blank" rel="noopener" href="https://changyan.kuaizhan.com/">畅言</a>，然后添加站点以获取 APP ID 和 APP KEY</h4><p>注册账户：</p>
-<p><strong>用户类型:</strong></p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 通用网站用户（一般网站用户选择此项）</li>
-<li><input disabled="" type="checkbox"> CMS平台用户（WordPress，DedeCMS，Z-Blog 用户选择此选项）</li>
-<li><input disabled="" type="checkbox"> Android &amp; IOS用户（APP开发者选择此项）</li>
-</ul>
-<p><strong>站点名称:</strong> *</p>
-<p>  XXX’s Blog</p>
-<ul>
-<li><em>请填写站点名称,不超过15个字</em></li>
-</ul>
-<p>站点类型:</p>
-<ul>
-<li><p><input checked="" disabled="" type="checkbox"> 
-生活娱乐<br><strong>获取lite版:</strong></p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox"> 
-确认获取</p>
-</li>
-</ul>
-<p>确定</p>
-<h4 id="2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示"><a href="#2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示" class="headerlink" title="2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示"></a>2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示</h4><p> NexT 配置文件</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">changyan</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any naves, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h3 id="在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下"><a href="#在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下" class="headerlink" title="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下"></a>在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下</h3><h4 id="1-安装-Node-js-14-x"><a href="#1-安装-Node-js-14-x" class="headerlink" title="1. 安装 Node.js 14.x"></a>1. 安装 Node.js 14.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_14.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># changyan</span></span><br><span class="line"><span class="attr">changyan:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">appid:</span></span><br><span class="line">  <span class="attr">appkey:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>验证版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 应输出 v14.x.x</span></span><br><span class="line">npm -v   <span class="comment"># 应输出 6.x.x</span></span><br></pre></td></tr></table></figure>
 
-<div class="note warning"><p>注意：评论后，您需要一些时间才能看到评论数量的增加。</p>
-</div>
+<h4 id="2-安装-code-server"><a href="#2-安装-code-server" class="headerlink" title="2. 安装 code-server"></a>2. 安装 code-server</h4><p>使用 npm 全局安装最新稳定版：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g code-server@4.14.1</span><br></pre></td></tr></table></figure>
+
+<p>注意：选择 4.14.1 版本是为了兼容 Ubuntu 16.04 的较旧依赖环境。</p>
+<h4 id="3-配置-code-server"><a href="#3-配置-code-server" class="headerlink" title="3. 配置 code-server"></a>3. 配置 code-server</h4><p>创建配置目录并生成默认配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.config/code-server</span><br><span class="line">code-server --config ~/.config/code-server/config.yaml --generate-password</span><br></pre></td></tr></table></figure>
+
+<p>编辑配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>修改内容如下（示例）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>  <span class="comment"># 监听所有 IP，端口 8080</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>           <span class="comment"># 密码认证</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_password</span>  <span class="comment"># 改为强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>              <span class="comment"># 暂不使用 HTTPS</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-创建-Systemd-服务"><a href="#4-创建-Systemd-服务" class="headerlink" title="4. 创建 Systemd 服务"></a>4. 创建 Systemd 服务</h4><p>创建服务文件以便后台运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /lib/systemd/system/code-server.service</span><br></pre></td></tr></table></figure>
+
+<p>内容如下（替换 your_username 为你的用户名）：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=code-server</span><br><span class="line"><span class="attr">After</span>=networking.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=your_username</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/code-server --config /home/your_username/.config/code-server/config.yaml</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-启动服务并设置开机自启"><a href="#5-启动服务并设置开机自启" class="headerlink" title="5. 启动服务并设置开机自启"></a>5. 启动服务并设置开机自启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start code-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> code-server</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-配置防火墙（如果启用）"><a href="#6-配置防火墙（如果启用）" class="headerlink" title="6. 配置防火墙（如果启用）"></a>6. 配置防火墙（如果启用）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ufw allow 8080</span><br><span class="line"><span class="built_in">sudo</span> ufw reload</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-访问-Web-界面"><a href="#7-访问-Web-界面" class="headerlink" title="7. 访问 Web 界面"></a>7. 访问 Web 界面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://服务器IP:8080</span><br></pre></td></tr></table></figure>
+
+<p>输入配置的密码登录。</p>
+<h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h5 id="1-内存不足"><a href="#1-内存不足" class="headerlink" title="1.内存不足"></a>1.内存不足</h5><p>Ubuntu 16.04 至少需要 1GB RAM，可添加交换空间：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fallocate -l 1G /swapfile</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br><span class="line"><span class="built_in">sudo</span> swapon /swapfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/swapfile none swap defaults 0 0&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -362,21 +366,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/chang-yan/" rel="tag"># chang-yan</a>
+              <a href="/tags/code-server/" rel="tag"># code-server</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2025/07/github-hexo/" rel="prev" title="Github Hexo">
-                  <i class="fa fa-angle-left"></i> Github Hexo
+                <a href="/posts/2025/07/jupyter-notebook/" rel="prev" title="Jupyter Notebook">
+                  <i class="fa fa-angle-left"></i> Jupyter Notebook
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2025/07/waline/" rel="next" title="Waline">
-                  Waline <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -388,7 +389,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="2618c959ceabb09af2b9f13e62d027ea"></div>
+    <div class="comments" id="SOHUCS" sid="d6c5729a800c563b66965db251e45a18"></div>
 </div>
   </main>
 
