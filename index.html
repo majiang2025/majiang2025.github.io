@@ -265,9 +265,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-07-10 16:31:46 / 修改时间：16:55:45" itemprop="dateCreated datePublished" datetime="2025-07-10T16:31:46+08:00">2025-07-10</time>
+      <time title="创建时间：2025-07-10 16:31:46" itemprop="dateCreated datePublished" datetime="2025-07-10T16:31:46+08:00">2025-07-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-11 11:34:33" itemprop="dateModified" datetime="2025-07-11T11:34:33+08:00">2025-07-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -299,14 +305,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.4k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -317,18 +323,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下"><a href="#在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下" class="headerlink" title="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下"></a>在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下</h3><h4 id="1-安装-Node-js-14-x"><a href="#1-安装-Node-js-14-x" class="headerlink" title="1. 安装 Node.js 14.x"></a>1. 安装 Node.js 14.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_14.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+          <h3 id="在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下"><a href="#在-Ubuntu-16-04-Server-上安装-code-server（Web-版-VSCode）的步骤如下" class="headerlink" title="在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下"></a>在 Ubuntu 16.04 Server 上安装 code-server（Web 版 VSCode）的步骤如下</h3><h4 id="1-安装-Node-js-16-x"><a href="#1-安装-Node-js-16-x" class="headerlink" title="1. 安装 Node.js 16.x"></a>1. 安装 Node.js 16.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_16.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
 
 <p>验证版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 应输出 v14.x.x</span></span><br><span class="line">npm -v   <span class="comment"># 应输出 6.x.x</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 应输出 v16.x.x</span></span><br><span class="line">npm -v   <span class="comment"># 应输出 8.x.x</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="2-安装-code-server"><a href="#2-安装-code-server" class="headerlink" title="2. 安装 code-server"></a>2. 安装 code-server</h4><p>使用 npm 全局安装最新稳定版：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g code-server@4.14.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g --unsafe-perm code-server@4.14.1</span><br></pre></td></tr></table></figure>
 
 <p>注意：选择 4.14.1 版本是为了兼容 Ubuntu 16.04 的较旧依赖环境。</p>
 <h4 id="3-配置-code-server"><a href="#3-配置-code-server" class="headerlink" title="3. 配置 code-server"></a>3. 配置 code-server</h4><p>创建配置目录并生成默认配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.config/code-server</span><br><span class="line">code-server --config ~/.config/code-server/config.yaml --generate-password</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/.config/code-server</span><br><span class="line">code-server --config ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
 
 <p>编辑配置文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
@@ -337,10 +343,10 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>  <span class="comment"># 监听所有 IP，端口 8080</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>           <span class="comment"># 密码认证</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_password</span>  <span class="comment"># 改为强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>              <span class="comment"># 暂不使用 HTTPS</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="4-创建-Systemd-服务"><a href="#4-创建-Systemd-服务" class="headerlink" title="4. 创建 Systemd 服务"></a>4. 创建 Systemd 服务</h4><p>创建服务文件以便后台运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /lib/systemd/system/code-server.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/code-server.service</span><br></pre></td></tr></table></figure>
 
 <p>内容如下（替换 your_username 为你的用户名）：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=code-server</span><br><span class="line"><span class="attr">After</span>=networking.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=your_username</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/code-server --config /home/your_username/.config/code-server/config.yaml</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=code-server</span><br><span class="line"><span class="attr">After</span>=networking.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=user</span><br><span class="line"><span class="attr">Environment</span>=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/loca$</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/code-server --config /home/your_username/.config/code-server/config.yaml</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <h4 id="5-启动服务并设置开机自启"><a href="#5-启动服务并设置开机自启" class="headerlink" title="5. 启动服务并设置开机自启"></a>5. 启动服务并设置开机自启</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start code-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> code-server</span><br></pre></td></tr></table></figure>
 
@@ -349,8 +355,20 @@
 <h4 id="7-访问-Web-界面"><a href="#7-访问-Web-界面" class="headerlink" title="7. 访问 Web 界面"></a>7. 访问 Web 界面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://服务器IP:8080</span><br></pre></td></tr></table></figure>
 
 <p>输入配置的密码登录。</p>
-<h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h5 id="1-内存不足"><a href="#1-内存不足" class="headerlink" title="1.内存不足"></a>1.内存不足</h5><p>Ubuntu 16.04 至少需要 1GB RAM，可添加交换空间：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fallocate -l 1G /swapfile</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line"><span class="built_in">sudo</span> mkswap /swapfile</span><br><span class="line"><span class="built_in">sudo</span> swapon /swapfile</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/swapfile none swap defaults 0 0&#x27;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> -a /etc/fstab</span><br></pre></td></tr></table></figure>
+<h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h4 id="1-使用-deb-包安装"><a href="#1-使用-deb-包安装" class="headerlink" title="1. 使用.deb 包安装"></a>1. 使用.deb 包安装</h4><p>对于 Ubuntu 16.04系统，推荐通过.deb 包来安装 code-server，这样能避免 npm 安装时出现的权限问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取最新版本的下载链接（请替换为实际的最新版本）</span></span><br><span class="line">VERSION=4.14.1</span><br><span class="line">wget https://github.com/coder/code-server/releases/download/v<span class="variable">$VERSION</span>/code-server_<span class="variable">$&#123;VERSION&#125;</span>_amd64.deb</span><br><span class="line"><span class="comment"># 安装.deb包</span></span><br><span class="line"><span class="built_in">sudo</span> dpkg -i code-server_<span class="variable">$&#123;VERSION&#125;</span>_amd64.deb</span><br><span class="line"><span class="comment"># 修复依赖（如果有缺失的依赖）</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -f</span><br></pre></td></tr></table></figure>
+
+<p>持久化运行 code-server</p>
+<p>如果你使用的是.deb 包安装的 code-server，建议通过 systemd 管理服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置服务开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> code-server@<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start code-server@<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl status code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 Node.js 内置的 crypto 模块生成哈希密码：</span></span><br><span class="line"></span><br><span class="line">nano ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
+
+<p>推荐配置示例：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>       <span class="comment"># 允许外部访问，注意安全组设置</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>                 <span class="comment"># 认证方式</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_strong_password</span> <span class="comment"># 强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>                     <span class="comment"># 启用HTTPS（需要证书）</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart code-server</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -729,7 +747,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-10 17:38:11" itemprop="dateModified" datetime="2025-07-10T17:38:11+08:00">2025-07-10</time>
+      <time title="修改时间：2025-07-11 09:16:39" itemprop="dateModified" datetime="2025-07-11T09:16:39+08:00">2025-07-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -802,8 +820,8 @@
 </li>
 </ul>
 <p>确定</p>
-<h4 id="2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示"><a href="#2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示" class="headerlink" title="2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示"></a>2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示</h4><p> NexT 配置文件</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">changyan</span></span><br><span class="line">  <span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line">  <span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Lazyload all comment systems.</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Modify texts or order for any naves, here are some examples.</span></span><br><span class="line">  <span class="attr">nav:</span></span><br><span class="line">    <span class="comment">#disqus:</span></span><br><span class="line">    <span class="comment">#  text: Load Disqus</span></span><br><span class="line">    <span class="comment">#  order: -1</span></span><br><span class="line">    <span class="comment">#gitalk:</span></span><br><span class="line">    <span class="comment">#  order: -2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示"><a href="#2-将取值-enable-设置为-true-，并将获取的-APP-ID（-appid-）和-APP-KEY（-appkey-）添加到-NexT-配置文件的-changyan-Section-中，如下所示" class="headerlink" title="2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示"></a>2.将取值 enable 设置为 true ，并将获取的 APP ID（ appid ）和 APP KEY（ appkey ）添加到 NexT 配置文件的 changyan Section 中，如下所示</h4><p>NexT 配置文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line"><span class="comment"># Available values: tabs | buttons</span></span><br><span class="line"><span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line"><span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line"><span class="comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span></span><br><span class="line"><span class="attr">active:</span> <span class="string">changyan</span></span><br><span class="line"><span class="comment"># Setting `true` means remembering the comment system selected by the visitor.</span></span><br><span class="line"><span class="attr">storage:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># Lazyload all comment systems.</span></span><br><span class="line"><span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># Modify texts or order for any naves, here are some examples.</span></span><br><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="comment">#disqus:</span></span><br><span class="line">  <span class="comment">#  text: Load Disqus</span></span><br><span class="line">  <span class="comment">#  order: -1</span></span><br><span class="line">  <span class="comment">#gitalk:</span></span><br><span class="line">  <span class="comment">#  order: -2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># changyan</span></span><br><span class="line"><span class="attr">changyan:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">appid:</span></span><br><span class="line">  <span class="attr">appkey:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
@@ -946,7 +964,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;git@github.com&gt;:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
 
 <p>验证 SSH 连接</p>
-<p>bash<br>ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">git@github.com</a></p>
+<p>bash<br>ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#109;">git@github.com</a></p>
 <p>要是看到Hi &lt;用户名&gt;! You’ve successfully authenticated…，就说明连接成功了。</p>
 <p>参考：<a href="https://majiang2025.github.io/">本人博客</a></p>
 
@@ -991,14 +1009,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
