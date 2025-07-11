@@ -1416,7 +1416,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #f14d82;
+    background: #c8daff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1903,7 +1903,7 @@ pre code {
 .reading-progress-bar {
   --progress: 0;
   background: #37c6c0;
-  height: 3px;
+  height: 2px;
   position: fixed;
   z-index: 50;
   width: var(--progress);
