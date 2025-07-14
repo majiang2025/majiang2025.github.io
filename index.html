@@ -279,7 +279,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-14 13:26:39" itemprop="dateModified" datetime="2025-07-14T13:26:39+08:00">2025-07-14</time>
+      <time title="修改时间：2025-07-14 13:34:59" itemprop="dateModified" datetime="2025-07-14T13:34:59+08:00">2025-07-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,7 +342,7 @@
 <p>推荐配置示例：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>       <span class="comment"># 允许外部访问，注意安全组设置</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>                 <span class="comment"># 认证方式</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_strong_password</span> <span class="comment"># 强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>                     <span class="comment"># 启用HTTPS（需要证书）</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart code-server</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h4 id="其他安装"><a href="#其他安装" class="headerlink" title="其他安装"></a>其他安装</h4><h4 id="1-安装-Node-js-16-x"><a href="#1-安装-Node-js-16-x" class="headerlink" title="1. 安装 Node.js 16.x"></a>1. 安装 Node.js 16.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_16.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
@@ -603,7 +603,7 @@
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9sZGRnby5uZXQv">超级链接<i class="fa fa-external-link-alt"></i></span> - <code>[超级链接](https://lddgo.net)</code></li>
-<li><span class="exturl" data-url="bWFpbHRvOiYjeDc1OyYjeDczOyYjeDY1OyYjeDcyOyYjeDZlOyYjeDYxOyYjeDZkOyYjMTAxOyYjNjQ7JiMxMDM7JiMxMDk7JiM5NzsmI3g2OTsmIzEwODsmI3gyZTsmIzk5OyYjeDZmOyYjeDZkOw==">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><span class="exturl" data-url="bWFpbHRvOiYjMTE3OyYjeDczOyYjeDY1OyYjMTE0OyYjMTEwOyYjOTc7JiMxMDk7JiN4NjU7JiM2NDsmIzEwMzsmIzEwOTsmIzk3OyYjeDY5OyYjeDZjOyYjNDY7JiN4NjM7JiMxMTE7JiN4NmQ7">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
