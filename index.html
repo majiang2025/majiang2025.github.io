@@ -281,7 +281,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-15 16:37:44" itemprop="dateModified" datetime="2025-07-15T16:37:44+08:00">2025-07-15</time>
+      <time title="修改时间：2025-07-15 17:05:52" itemprop="dateModified" datetime="2025-07-15T17:05:52+08:00">2025-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -313,14 +313,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.6k</span>
+      <span>6.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -346,78 +346,14 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 
 <p>核心逻辑：vLLM 加速模型推理，RAGFlow 处理知识检索与增强，DeepSeek 提供语义理解与生成能力。</p>
 <h4 id="1-安装-Docker-和-Docker-Compose"><a href="#1-安装-Docker-和-Docker-Compose" class="headerlink" title="1. 安装 Docker 和 Docker Compose"></a>1. 安装 Docker 和 Docker Compose</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移除现有 Docker 源配置</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /etc/apt/sources.list.d/docker.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加阿里云 Docker 源（支持 Focal）</span></span><br><span class="line">curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | <span class="built_in">sudo</span> gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu focal stable&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新并安装 Docker</span></span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install docker-ce docker-ce-cli containerd.io -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 Docker 安装</span></span><br><span class="line"><span class="built_in">sudo</span> docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Docker Compose</span></span><br><span class="line"><span class="built_in">sudo</span> apt  install docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment">#或者 </span></span><br><span class="line"><span class="built_in">sudo</span> curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用可执行权限</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证 Docker Compose 安装</span></span><br><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-安装-NVIDIA-Container-Toolkit"><a href="#2-安装-NVIDIA-Container-Toolkit" class="headerlink" title="2. 安装 NVIDIA Container Toolkit"></a>2. 安装 NVIDIA Container Toolkit</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">distribution=$(. /etc/os-release;<span class="built_in">echo</span> $ID<span class="variable">$VERSION_ID</span>)</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line">curl -s -L https://nvidia.github.io/nvidia-docker/<span class="variable">$distribution</span>/nvidia-docker.list | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/nvidia-docker.list</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt-get update &amp;&amp; <span class="built_in">sudo</span> apt-get install -y nvidia-container-toolkit</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nvidia-docker2</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建或修改 Docker 配置文件</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://heod35bo.mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://dockerproxy.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://mirror.baidubce.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.m.daocloud.io&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.nju.edu.cn&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.sjtug.sjtu.edu.cn&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://ghcr.nju.edu.cn&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 Docker 服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证配置是否生效</span></span><br><span class="line"><span class="built_in">sudo</span> docker info | grep <span class="string">&#x27;Registry Mirrors&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证GPU是否被Docker识别</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> docker run --<span class="built_in">rm</span> --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi</span><br><span class="line"></span><br><span class="line"><span class="comment"># vllm-openai:latest 对应的 CUDA 版本</span></span><br><span class="line">latest 镜像推测：由于 latest 标签指向最新构建的镜像，而当前（2025 年）vllm 主流版本已适配较新的 CUDA 环境，结合官方 Dockerfile 惯例，vllm-openai:latest 通常使用 CUDA 12.1 或 12.2（这两个版本是近年大模型推理的主流选择，兼容性和性能平衡较好）。</span><br><span class="line"></span><br><span class="line"><span class="comment"># ragflow:latest 对应的 CUDA 版本</span></span><br><span class="line">含本地推理场景：若集成了大模型本地推理（如使用 PyTorch、TensorFlow），则需依赖 CUDA。此时，其 CUDA 版本通常与所集成的模型框架兼容，主流为 CUDA 11.8 或 12.0（兼顾兼容性和新特性）。</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-部署-vLLM-服务"><a href="#3-部署-vLLM-服务" class="headerlink" title="3. 部署 vLLM 服务"></a>3. 部署 vLLM 服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建工作目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/llm-stack &amp;&amp; <span class="built_in">cd</span> ~/llm-stack</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建Docker Compose文件</span></span><br><span class="line"><span class="built_in">cat</span> &gt; docker-compose.yml &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">services:</span></span><br><span class="line"><span class="string">  vllm:</span></span><br><span class="line"><span class="string">    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/vllm/vllm-openai:latest</span></span><br><span class="line"><span class="string">    container_name: vllm_deepseek_7b</span></span><br><span class="line"><span class="string">    restart: always</span></span><br><span class="line"><span class="string">    ports:</span></span><br><span class="line"><span class="string">      - &quot;8000:8000&quot;</span></span><br><span class="line"><span class="string">    environment:</span></span><br><span class="line"><span class="string">      - MODEL=deepseek-ai/deepseek-coder-6.7b-base  # 选择合适的Deepseek模型</span></span><br><span class="line"><span class="string">      - HOST=0.0.0.0</span></span><br><span class="line"><span class="string">      - PORT=8000</span></span><br><span class="line"><span class="string">      - QUANTIZATION=q4_k_m  # 量化参数，根据GPU显存调整</span></span><br><span class="line"><span class="string">    volumes:</span></span><br><span class="line"><span class="string">      - model-cache:/data</span></span><br><span class="line"><span class="string">    deploy:</span></span><br><span class="line"><span class="string">      resources:</span></span><br><span class="line"><span class="string">        reservations:</span></span><br><span class="line"><span class="string">          devices:</span></span><br><span class="line"><span class="string">            - driver: nvidia</span></span><br><span class="line"><span class="string">              count: 1 # 使用的 GPU 数量</span></span><br><span class="line"><span class="string">              capabilities: [gpu]</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动vLLM服务</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-部署-RAGFlow"><a href="#4-部署-RAGFlow" class="headerlink" title="4. 部署 RAGFlow"></a>4. 部署 RAGFlow</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加RAGFlow服务到docker-compose.yml</span></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt; docker-compose.yml &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">  ragflow:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/infiniflow/ragflow:latest</span></span><br><span class="line"><span class="string">    container_name: ragflow</span></span><br><span class="line"><span class="string">    restart: always</span></span><br><span class="line"><span class="string">    ports:</span></span><br><span class="line"><span class="string">      - &quot;3000:3000&quot;</span></span><br><span class="line"><span class="string">    environment:</span></span><br><span class="line"><span class="string">      - VLLM_API_URL=&lt;http://vllm:8000&gt;  # 指向vLLM服务</span></span><br><span class="line"><span class="string">      - DEFAULT_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2</span></span><br><span class="line"><span class="string">    depends_on:</span></span><br><span class="line"><span class="string">      - vllm</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  volumes:</span></span><br><span class="line"><span class="string">    model-cache:</span></span><br><span class="line"><span class="string">    ragflow:</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新启动服务</span></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置与验证"><a href="#配置与验证" class="headerlink" title="配置与验证"></a>配置与验证</h4><ul>
-<li><ol>
-<li>验证服务状态</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps  <span class="comment"># 应看到vllm和ragflow容器正常运行</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="2">
-<li>访问 RAGFlow 界面</li>
-</ol>
-</li>
-</ul>
-<p>打开浏览器访问 <span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDozMDAw77yM5oyJ54Wn55WM6Z2i5oyH5byV5a6M5oiQ5Yid5aeL6YWN572u77ya">http://localhost:3000，按照界面指引完成初始配置：<i class="fa fa-external-link-alt"></i></span></p>
-<ul>
-<li><p>连接 vLLM API（地址为 <span class="exturl" data-url="aHR0cDovL3ZsbG06ODAwMO+8iQ==">http://vllm:8000）<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li><p>上传文档或添加数据源</p>
-</li>
-<li><p>配置 embedding 模型和 RAG 参数</p>
-</li>
-<li><p>测试 RAG 流程</p>
-</li>
-<li><ol start="3">
-<li>常见问题解决<br> GPU 显存不足：修改 docker-compose.yml 中的 QUANTIZATION 参数（如使用 q8_0 或 q4_0）<br> 模型下载缓慢：添加 Hugging Face 镜像源（修改 vLLM 服务的环境变量）</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="string">HF_HOME=/data</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">TRANSFORMERS_CACHE=/data</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">HF_ENDPOINT=&lt;https://hf-mirror.com&gt;</span>  <span class="comment"># 添加镜像源</span></span><br></pre></td></tr></table></figure>
-
-<p>RAGFlow 连接失败：检查容器网络连通性，确保 vLLM 服务正常响应</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &lt;http://localhost:8000/v1/models&gt;  <span class="comment"># 应返回模型列表</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="扩展配置"><a href="#扩展配置" class="headerlink" title="扩展配置"></a>扩展配置</h4><ul>
-<li><ol>
-<li>持久化数据</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">./ragflow-data:/app/data</span>  <span class="comment"># 添加数据持久化挂载</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="2">
-<li>自定义 Deepseek 模型<br>修改 docker-compose.yml 中的 MODEL 环境变量，选择合适的 Deepseek 模型：</li>
-</ol>
-</li>
-</ul>
-<p>deepseek-ai&#x2F;deepseek-llm-7b-base<br>deepseek-ai&#x2F;deepseek-coder-6.7b-base<br>deepseek-ai&#x2F;deepseek-llm-67b-base<br>后续步骤</p>
-<ul>
-<li><ol>
-<li>配置 RAG 流程：在 RAGFlow 界面创建文档索引，设置检索参数</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>优化性能：根据实际需求调整模型量化级别和分块策略</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>集成应用：通过 RAGFlow 提供的 API 将服务集成到业务系统中</li>
-</ol>
-</li>
-</ul>
-<p>如果在安装过程中遇到问题，可以提供具体错误信息以便进一步排查。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2025/07/deepseek-vllm/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -479,7 +415,7 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-14 13:34:59" itemprop="dateModified" datetime="2025-07-14T13:34:59+08:00">2025-07-14</time>
+      <time title="修改时间：2025-07-15 17:07:15" itemprop="dateModified" datetime="2025-07-15T17:07:15+08:00">2025-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -535,20 +471,6 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 <p>持久化运行 code-server</p>
 <p>如果你使用的是.deb 包安装的 code-server，建议通过 systemd 管理服务：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置服务开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> code-server@<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl start code-server@<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl status code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用 Node.js 内置的 crypto 模块生成哈希密码：</span></span><br><span class="line"></span><br><span class="line">nano ~/.config/code-server/config.yaml</span><br></pre></td></tr></table></figure>
-
-<p>推荐配置示例：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind-addr:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:8080</span>       <span class="comment"># 允许外部访问，注意安全组设置</span></span><br><span class="line"><span class="attr">auth:</span> <span class="string">password</span>                 <span class="comment"># 认证方式</span></span><br><span class="line"><span class="attr">password:</span> <span class="string">your_strong_password</span> <span class="comment"># 强密码</span></span><br><span class="line"><span class="attr">cert:</span> <span class="literal">false</span>                     <span class="comment"># 启用HTTPS（需要证书）</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载 Systemd</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart code-server@<span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="常见问题解决"><a href="#常见问题解决" class="headerlink" title="常见问题解决"></a>常见问题解决</h4><h4 id="其他安装"><a href="#其他安装" class="headerlink" title="其他安装"></a>其他安装</h4><h4 id="1-安装-Node-js-16-x"><a href="#1-安装-Node-js-16-x" class="headerlink" title="1. 安装 Node.js 16.x"></a>1. 安装 Node.js 16.x</h4><p>code-server 依赖 Node.js 12+，但 Ubuntu 16.04 的默认仓库版本过低，需通过 NodeSource 安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 NodeSource 仓库</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_16.x | <span class="built_in">sudo</span> -E bash -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 Node.js 和 npm</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-
-<p>验证版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v  <span class="comment"># 应输出 v16.x.x</span></span><br><span class="line">npm -v   <span class="comment"># 应输出 8.x.x</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2025/07/code-server/#more" rel="contents">
@@ -618,7 +540,7 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-14 11:47:26" itemprop="dateModified" datetime="2025-07-14T11:47:26+08:00">2025-07-14</time>
+      <time title="修改时间：2025-07-15 17:07:44" itemprop="dateModified" datetime="2025-07-15T17:07:44+08:00">2025-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -742,7 +664,7 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-15 11:19:50" itemprop="dateModified" datetime="2025-07-15T11:19:50+08:00">2025-07-15</time>
+      <time title="修改时间：2025-07-15 17:06:06" itemprop="dateModified" datetime="2025-07-15T17:06:06+08:00">2025-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -803,274 +725,21 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly93d3cubGRkZ28ubmV0L3N0cmluZy9tYXJrZG93bi1lZGl0b3I=">超级链接<i class="fa fa-external-link-alt"></i></span> - <code>[超级链接](https://www.lddgo.net/string/markdown-editor)</code></li>
-<li><span class="exturl" data-url="bWFpbHRvOiYjMTE3OyYjeDczOyYjeDY1OyYjeDcyOyYjeDZlOyYjeDYxOyYjMTA5OyYjeDY1OyYjeDQwOyYjMTAzOyYjeDZkOyYjOTc7JiN4Njk7JiMxMDg7JiM0NjsmI3g2MzsmIzExMTsmI3g2ZDs=">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><span class="exturl" data-url="bWFpbHRvOiYjeDc1OyYjMTE1OyYjMTAxOyYjMTE0OyYjMTEwOyYjOTc7JiMxMDk7JiN4NjU7JiN4NDA7JiMxMDM7JiMxMDk7JiN4NjE7JiN4Njk7JiMxMDg7JiM0NjsmIzk5OyYjeDZmOyYjeDZkOw==">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
 <h3 id="大标题-Heading-3"><a href="#大标题-Heading-3" class="headerlink" title="大标题 - Heading 3"></a>大标题 - Heading 3</h3><p>你可以选择使用 H1 至 H6，使用 ##(N) 打头。</p>
 <blockquote>
 <p>NOTE: 别忘了 # 后面需要有空格！</p>
 </blockquote>
 <h4 id="Heading-4"><a href="#Heading-4" class="headerlink" title="Heading 4"></a>Heading 4</h4><h5 id="Heading-5"><a href="#Heading-5" class="headerlink" title="Heading 5"></a>Heading 5</h5><h6 id="Heading-6"><a href="#Heading-6" class="headerlink" title="Heading 6"></a>Heading 6</h6><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![alt 文本](http://image-path.png)</span><br><span class="line">![alt 文本](http://image-path.png &quot;图片 Title 值&quot;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><h4 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*emphasize*    **strong**</span><br><span class="line">_emphasize_    __strong__</span><br><span class="line">var a = 1</span><br></pre></td></tr></table></figure>
-
-<h4 id="语法高亮支持"><a href="#语法高亮支持" class="headerlink" title="语法高亮支持"></a>语法高亮支持</h4><p>如果在 &#96;&#96;&#96; 后面跟随语言名称，可以有语法高亮的效果哦，比如:</p>
-<h5 id="演示-Go-代码高亮"><a href="#演示-Go-代码高亮" class="headerlink" title="演示 Go 代码高亮"></a>演示 Go 代码高亮</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"> fmt.Println(<span class="string">&quot;Hello, 世界&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="演示-Java-高亮"><a href="#演示-Java-高亮" class="headerlink" title="演示 Java 高亮"></a>演示 Java 高亮</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Tip: 语言名称支持下面这些: <code>ruby</code>, <code>python</code>, <code>js</code>, <code>html</code>, <code>erb</code>, <code>css</code>, <code>coffee</code>, <code>bash</code>, <code>json</code>, <code>yml</code>, <code>xml</code> …</p>
-</blockquote>
-<h3 id="有序、无序、任务列表"><a href="#有序、无序、任务列表" class="headerlink" title="有序、无序、任务列表"></a>有序、无序、任务列表</h3><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>
-<li>Java<ul>
-<li>Spring<ul>
-<li>IoC</li>
-<li>AOP</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Go<ul>
-<li>gofmt</li>
-<li>Wide</li>
-</ul>
-</li>
-<li>Node.js<ul>
-<li>Koa</li>
-<li>Express</li>
-</ul>
-</li>
-</ul>
-<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><ol>
-<li>Node.js<ol>
-<li>Express</li>
-<li>Koa</li>
-<li>Sails</li>
-</ol>
-</li>
-<li>Go<ol>
-<li>gofmt</li>
-<li>Wide</li>
-</ol>
-</li>
-<li>Java<ol>
-<li>Latke</li>
-<li>IDEA</li>
-</ol>
-</li>
-</ol>
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><ul>
-<li><input checked="" disabled="" type="checkbox"> 发布 任务1</li>
-<li><input checked="" disabled="" type="checkbox"> 发布 任务2</li>
-<li><input disabled="" type="checkbox"> 预约 任务2</li>
-</ul>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>如果需要展示数据什么的，可以选择使用表格。</p>
-<table>
-<thead>
-<tr>
-<th>header 1</th>
-<th>header 2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cell 1</td>
-<td>cell 2</td>
-</tr>
-<tr>
-<td>cell 3</td>
-<td>cell 4</td>
-</tr>
-<tr>
-<td>cell 5</td>
-<td>cell 6</td>
-</tr>
-</tbody></table>
-<h3 id="隐藏细节"><a href="#隐藏细节" class="headerlink" title="隐藏细节"></a>隐藏细节</h3><details>
-<summary>这里是摘要部分。</summary>
-这里是细节部分。
-</details>
-
-<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><p>空行可以将内容进行分段，便于阅读。（这是第一段）</p>
-<p>使用空行在 Markdown 排版中相当重要。（这是第二段）</p>
-<h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><p><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80">链接文本</a></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9sZGRnby5uZXQv">LDDGO.NET<i class="fa fa-external-link-alt"></i></span></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[链接文本](链接地址)</span><br></pre></td></tr></table></figure>
-
-<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><details>
-<summary>设置</summary>
-编辑 nano /themes/next/_config.yml
-
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Available values: none | ams | all</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">none</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑 nano markdown.md</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Markdown</span><br><span class="line">author: Ma Jiang</span><br><span class="line">date: 2025-07-02 16:04:08</span><br><span class="line">tags: Markdown</span><br><span class="line"><span class="section">mathjax: true</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-</details>
-
-<p>多行公式块：</p>
-<p>$$<br>\frac{1}{<br>  \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{<br>  \frac25 \pi}} &#x3D; 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {<br>    1+\frac{e^{-6\pi}}<br>    {1+\frac{e^{-8\pi}}{1+\cdots}}<br>  }<br>}<br>$$</p>
-<p>行内公式：</p>
-<p>公式 $a^2 + b^2 &#x3D; color{red}c^2$ 是行内。</p>
-<h3 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h3><p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL21lcm1haWQ=">Mermaid<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkLm5vZGVqcy5jbi9lY29zeXN0ZW0vdHV0b3JpYWxzLmh0bWw=">Tutorials<i class="fa fa-external-link-alt"></i></span></p>
-<details>
-<summary>设置</summary>
-
-<p>NexT config file</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mermaid tag</span></span><br><span class="line"><span class="attr">mermaid:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># Available themes: default | dark | forest | neutral</span></span><br><span class="line">  <span class="attr">theme:</span></span><br><span class="line">    <span class="attr">light:</span> <span class="string">default</span></span><br><span class="line">    <span class="attr">dark:</span> <span class="string">dark</span></span><br></pre></td></tr></table></figure>
-
-<p>Hexo config file</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">exclude_languages:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mermaid</span></span><br></pre></td></tr></table></figure>
-
-<p>Usage</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid type %&#125;</span><br><span class="line">&#123;% endmermaid %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>or</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">`` `</span></span><br><span class="line">  mermaid</span><br><span class="line">  type</span><br><span class="line"><span class="code">`` `</span></span><br></pre></td></tr></table></figure>
-
-</details>
-
-<pre><code class="highlight mermaid">mindmap
-    Root
-        教程
-          语法指导
-            普通内容
-            大标题  Heading 3
-              Heading 4
-                Heading 5
-                  Heading 6
-            图片
-            代码块
-              普通
-              语法高亮支持
-                演示 Go 代码高亮
-                演示 Java 高亮
-            有序、无序、任务列表
-              无序列表
-              有序列表
-              任务列表
-            表格
-            隐藏细节
-            段落
-            链接引用
-            数学公式
-            脑图
-            流程图
-            时序图
-            甘特图
-            图表
-            五线谱
-            Graphviz
-            脚注</code></pre>
-
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><pre><code class="highlight mermaid">graph TB
-    c1--&gt;a2
-    subgraph one
-    a1--&gt;a2
-    end
-    subgraph two
-    b1--&gt;b2
-    end
-    subgraph three
-    c1--&gt;c2
-    end</code></pre>
-
-<h3 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h3><pre><code class="highlight mermaid">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop Every minute
-        John--&gt;&gt;Alice: Great!
-    end</code></pre>
-
-<h3 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h3><pre><code class="highlight mermaid">gantt
-    title A Gantt Diagram
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2019-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2019-01-12  , 12d
-    another task      : 24d</code></pre>
-
-<h3 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h3><p>饼图</p>
-<pre><code class="highlight mermaid">pie title Pets adopted by volunteers
-    &quot;Dogs&quot; : 386
-    &quot;Cats&quot; : 85
-    &quot;Rats&quot; : 15
-</code></pre>
-
-<h3 id="Flowchart"><a href="#Flowchart" class="headerlink" title="Flowchart"></a>Flowchart</h3><pre><code class="highlight mermaid">flowchart
-    A[Start] --&gt; B[Your Operation]
-    A --No --&gt;C
-    B --&gt; C&#123;Yes or No？&#125;
-    C --Yes --&gt; D[End]</code></pre>
-
-<h3 id="Graphviz"><a href="#Graphviz" class="headerlink" title="Graphviz"></a>Graphviz</h3><details>
-<summary>设置</summary>
-
-<p>hexo-graphviz</p>
-<p>Plugin for Hexo which renders Graphviz plots</p>
-<p>Installation</p>
-<p>Install Package</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-graphviz --save</span><br></pre></td></tr></table></figure>
-
-<p>Edit Config</p>
-<p>After installed, you should edit hexo config file: _config.yml:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-graphviz</span></span><br><span class="line"><span class="attr">graphviz:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>Include viz.js in njk</p>
-<p>After editing _config.yml, you shoud be able to edit your blog page component like after-footer.ejs or a njk file which can be found inside the themes&#x2F;layout&#x2F;_partials&#x2F; directory.</p>
-<p>The following code should be added in the file footer.njk:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.graphviz.enable %&#125;</span><br><span class="line">  &lt;script src=&#x27;https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js&#x27;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    String.prototype.replaceAll = function(search, replacement) &#123;</span><br><span class="line">      var target = this;</span><br><span class="line">      return target.split(search).join(replacement);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    let vizObjects = document.querySelectorAll(&#x27;.graphviz&#x27;)</span><br><span class="line"></span><br><span class="line">    for (let item of vizObjects) &#123;</span><br><span class="line">      let svg = undefined</span><br><span class="line">      try &#123;</span><br><span class="line">        svg = Viz(item.textContent.replaceAll(&#x27;–&#x27;, &#x27;--&#x27;), &#x27;svg&#x27;)</span><br><span class="line">      &#125; catch(e) &#123;</span><br><span class="line">        svg = `&lt;pre class=&quot;error&quot;&gt;$&#123;e&#125;&lt;/pre&gt;`</span><br><span class="line">      &#125;</span><br><span class="line">      item.outerHTML = svg</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Usage</p>
-<p>The graphviz block can be written inside a graphviz codeblock.</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">digraph finite<span class="emphasis">_state_</span>machine &#123;</span><br><span class="line"><span class="code">    rankdir=LR;</span></span><br><span class="line"><span class="code">    size=&quot;8,5&quot;</span></span><br><span class="line"><span class="code">    node [shape = doublecircle]; S;</span></span><br><span class="line"><span class="code">    node [shape = point ]; qi</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">    node [shape = circle];</span></span><br><span class="line"><span class="code">    qi -&gt; S;</span></span><br><span class="line"><span class="code">    S  -&gt; q1 [ label = &quot;a&quot; ];</span></span><br><span class="line"><span class="code">    S  -&gt; S  [ label = &quot;a&quot; ];</span></span><br><span class="line"><span class="code">    q1 -&gt; S  [ label = &quot;a&quot; ];</span></span><br><span class="line"><span class="code">    q1 -&gt; q2 [ label = &quot;ddb&quot; ];</span></span><br><span class="line"><span class="code">    q2 -&gt; q1 [ label = &quot;b&quot; ];</span></span><br><span class="line"><span class="code">    q2 -&gt; q2 [ label = &quot;b&quot; ];</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
-
-</details>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">digraph finite_state_machine &#123;</span><br><span class="line">    rankdir=LR;</span><br><span class="line">    size=&quot;8,5&quot;</span><br><span class="line">    node [shape = doublecircle]; S;</span><br><span class="line">    node [shape = point ]; qi</span><br><span class="line"></span><br><span class="line">    node [shape = circle];</span><br><span class="line">    qi -&gt; S;</span><br><span class="line">    S  -&gt; q1 [ label = &quot;a&quot; ];</span><br><span class="line">    S  -&gt; S  [ label = &quot;a&quot; ];</span><br><span class="line">    q1 -&gt; S  [ label = &quot;a&quot; ];</span><br><span class="line">    q1 -&gt; q2 [ label = &quot;ddb&quot; ];</span><br><span class="line">    q2 -&gt; q1 [ label = &quot;b&quot; ];</span><br><span class="line">    q2 -&gt; q2 [ label = &quot;b&quot; ];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="五线谱"><a href="#五线谱" class="headerlink" title="五线谱"></a>五线谱</h3><details>
-<summary>设置</summary>
-
-<p>hexo-tag-abcjs</p>
-<p>Helps you to render standard music notation with abcjs on your blog posts</p>
-<p>Install</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-abcjs</span><br></pre></td></tr></table></figure>
-
-<p>Configuration<br>You can configure this plugin in _config.yml.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">abcjs:</span></span><br><span class="line">  <span class="attr">js:</span> <span class="string">&#x27;/js/abcjs_midi_5.9.1-min.js&#x27;</span><span class="string">,</span></span><br><span class="line">  <span class="attr">css:</span> <span class="string">&#x27;/css/abcjs-midi.css&#x27;</span><span class="string">,</span></span><br><span class="line">  <span class="attr">midi:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line">  <span class="attr">animation:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line">  <span class="attr">animationColors:</span> [<span class="string">&#x27;#000000&#x27;</span>, <span class="string">&#x27;#3d9afc&#x27;</span>]</span><br><span class="line">  <span class="attr">options:</span> &#123;</span><br><span class="line">    <span class="attr">startingTune:</span> <span class="number">0</span>,</span><br><span class="line">    <span class="attr">print:</span> <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">visualTranspose:</span> <span class="number">0</span>,</span><br><span class="line">    <span class="attr">scale:</span> <span class="number">1</span>,</span><br><span class="line">    <span class="attr">responsive:</span> <span class="string">&#x27;resize&#x27;</span>,</span><br><span class="line">    <span class="attr">inlineControls:</span> &#123;</span><br><span class="line">      <span class="attr">loopToggle:</span> <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">standard:</span> <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">tooltipLoop:</span> <span class="string">&#x27;Click to toggle play once/repeat.&#x27;</span>,</span><br><span class="line">      <span class="attr">tooltipReset:</span> <span class="string">&#x27;Click to go to beginning.&#x27;</span>,</span><br><span class="line">      <span class="attr">tooltipPlay:</span> <span class="string">&#x27;Click to play/pause.&#x27;</span>,</span><br><span class="line">      <span class="attr">tooltipProgress:</span> <span class="string">&#x27;Click to change the playback position.&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="string">,</span></span><br><span class="line">  <span class="attr">scriptId:</span> <span class="string">&#x27;hexo-tag-abcjs&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>js - The abcjs library url. default: &#x2F;js&#x2F;abcjs_midi_5.9.1-min.js</li>
-<li>css - The abcjs style url. default: &#x2F;css&#x2F;abcjs-midi.css</li>
-<li>midi - Whether enable midi audio. default: true</li>
-<li>animation - Whether enable absjs animation. When true, highlights the current notation. default: true</li>
-<li>animationColors - The animated notation color. default: [‘#000000’, ‘#3d9afc’]</li>
-<li>options - The abcjs Configuration. default as above</li>
-<li>scriptId - The id of inserted script tag. default: hexo-tag-abcjs</li>
-</ul>
-<p>Usage</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% abcjs [autoplay] [no-midi] [no-animation] %&#125;</span><br><span class="line"></span><br><span class="line">here is your abcString</span><br><span class="line"></span><br><span class="line">&#123;% endabcjs %&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>autoplay - Enable autoplay</li>
-<li>no-midi - Disabled midi audio</li>
-<li>no-animation - Disabled audio animation</li>
-</ul>
-<p>Example<br>The following is a simple demo:</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;% abcjs autoplay %&#125;</span><br><span class="line">X: 22</span><br><span class="line">T:Money Lost</span><br><span class="line">M:3/4</span><br><span class="line">L:1/8</span><br><span class="line">Q:1/4=100</span><br><span class="line">C:Paul Rosen</span><br><span class="line">S:Copyright 2007, Paul Rosen</span><br><span class="line">R:Klezmer</span><br><span class="line">K:Dm</span><br><span class="line">Ade|:&quot;Dm&quot;(f2d)e gf|&quot;A7&quot;e2^c4|&quot;Gm&quot;B&gt;&gt;^c BA BG|&quot;A&quot;A3Ade|&quot;Dm&quot;(f2d)e gf|&quot;A7&quot;e2^c4|</span><br><span class="line">&quot;Gm&quot;A&gt;&gt;B &quot;A7&quot;AG FE|1&quot;Dm&quot;D3Ade:|2&quot;Dm&quot;D3DEF||:&quot;Gm&quot;(G2D)E FG|&quot;Dm&quot;A2F4|&quot;Gm&quot;B&gt;&gt;c &quot;A7&quot;BA BG|</span><br><span class="line">&quot;Dm&quot;A3 DEF|&quot;Gm&quot;(G2D)EFG|&quot;Dm&quot;A2F4|&quot;E°&quot;E&gt;&gt;Fy &quot;(A7)&quot;ED^C2|1&quot;Dm&quot;D3DEF:|2&quot;Dm&quot;D6||</span><br><span class="line">&#123;% endabcjs %&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">X: 24</span><br><span class="line">T: Clouds Thicken</span><br><span class="line">C: Paul Rosen</span><br><span class="line">S: Copyright 2005, Paul Rosen</span><br><span class="line">M: 6/8</span><br><span class="line">L: 1/8</span><br><span class="line">Q: 3/8=116</span><br><span class="line">R: Creepy Jig</span><br><span class="line">K: Em</span><br><span class="line">|:&quot;Em&quot;EEE E2G|&quot;C7&quot;_B2A G2F|&quot;Em&quot;EEE E2G|&quot;C7&quot;_B2A &quot;B7&quot;=B3|&quot;Em&quot;EEE E2G|</span><br><span class="line">&quot;C7&quot;_B2A G2F|&quot;Em&quot;GFE &quot;D (Bm7)&quot;F2D|1&quot;Em&quot;E3-E3:|2&quot;Em&quot;E3-E2B|:&quot;Em&quot;e2e gfe|</span><br><span class="line">&quot;G&quot;g2ab3|&quot;Em&quot;gfeg2e|&quot;D&quot;fedB2A|&quot;Em&quot;e2e gfe|&quot;G&quot;g2ab3|&quot;Em&quot;gfe&quot;D&quot;f2d|&quot;Em&quot;e3-e3:|</span><br></pre></td></tr></table></figure>
-
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><p>这里是一个脚注引用<a href="%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%84%9A%E6%B3%A8%E5%AE%9A%E4%B9%89%E3%80%82">^1</a>，这里是另一个脚注引用<a href="%E8%84%9A%E6%B3%A8%E5%AE%9A%E4%B9%89%E5%8F%AF%E4%BD%BF%E7%94%A8%E5%A4%9A%E6%AE%B5%E5%86%85%E5%AE%B9%E3%80%82">^bignote</a>。</p>
-<p>缩进对齐的段落包含在这个脚注定义内。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以使用代码块。</span><br></pre></td></tr></table></figure>
-
-<p>还有其他行级排版语法，比如<strong>加粗</strong>和<span class="exturl" data-url="aHR0cHM6Ly9sZGRnby5uZXQv">链接<i class="fa fa-external-link-alt"></i></span>。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">这里是一个脚注引用[^1]，这里是另一个脚注引用[^bignote]。</span><br><span class="line">[^1]: 第一个脚注定义。</span><br><span class="line">[^bignote]: 脚注定义可使用多段内容。</span><br><span class="line"></span><br><span class="line">    缩进对齐的段落包含在这个脚注定义内。</span><br><span class="line"></span><br><span class="line">    ` ``</span><br><span class="line">    可以使用代码块。</span><br><span class="line">    ` ``</span><br><span class="line"></span><br><span class="line">    还有其他行级排版语法，比如**加粗**和[链接](https://lddgo.net)。</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2025/07/markdown/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1240,14 +909,14 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">37k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">33 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
