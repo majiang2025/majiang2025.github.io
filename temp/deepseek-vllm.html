@@ -21,9 +21,9 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"majiang2025.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.1","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南下面为你提供 Docker +Deepseek + VLLM + RAGFlow  的安装部署指南。环境准备  硬件：建议使用 GPU 服务器（至少 16GB 显存，如 RTX 3080） 系统：Ubuntu 20.04&#x2F;22.04 LTS 软件：Docker 20.10+、D">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Deepseek Vllm Ragflow">
-<meta property="og:url" content="https://majiang2025.github.io/posts/2025/07/deepseek-vllm/index.html">
+<meta property="og:url" content="https://majiang2025.github.io/temp/deepseek-vllm.html">
 <meta property="og:site_name" content="Ma Jiang&#39;s Blog">
 <meta property="og:description" content="Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南下面为你提供 Docker +Deepseek + VLLM + RAGFlow  的安装部署指南。环境准备  硬件：建议使用 GPU 服务器（至少 16GB 显存，如 RTX 3080） 系统：Ubuntu 20.04&#x2F;22.04 LTS 软件：Docker 20.10+、D">
 <meta property="og:locale" content="zh_CN">
@@ -34,13 +34,14 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://majiang2025.github.io/posts/2025/07/deepseek-vllm/">
+<link rel="canonical" href="https://majiang2025.github.io/temp/deepseek-vllm">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://majiang2025.github.io/posts/2025/07/deepseek-vllm/","path":"posts/2025/07/deepseek-vllm/","title":"Deepseek Vllm Ragflow"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://majiang2025.github.io/temp/deepseek-vllm.html","path":"temp/deepseek-vllm.html","title":"Deepseek Vllm Ragflow"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Deepseek Vllm Ragflow | Ma Jiang's Blog</title>
+<title>Deepseek Vllm Ragflow | Ma Jiang's Blog
+</title>
   
 
 
@@ -126,7 +127,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -192,7 +193,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -203,7 +204,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -239,103 +240,27 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner page posts-expand">
 
 
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://majiang2025.github.io/posts/2025/07/deepseek-vllm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/favicon.png">
-      <meta itemprop="name" content="Ma Jiang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ma Jiang's Blog">
-      <meta itemprop="description" content="Simplicity is the ultimate sophistication.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Deepseek Vllm Ragflow | Ma Jiang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Deepseek Vllm Ragflow
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-07-14 15:10:21" itemprop="dateCreated datePublished" datetime="2025-07-14T15:10:21+08:00">2025-07-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-16 14:24:11" itemprop="dateModified" datetime="2025-07-16T14:24:11+08:00">2025-07-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="Deepseek Vllm Ragflow" href="/posts/2025/07/deepseek-vllm/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::4a5c45526637de6035ca48dcc5cbf49e" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>6.7k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">Deepseek Vllm Ragflow
+</h1>
+
+<div class="post-meta-container">
 </div>
 
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><h3 id="Ubuntu-20-04-上部署-Docker-Deepseek-VLLM-RAGFlow-的详细指南"><a href="#Ubuntu-20-04-上部署-Docker-Deepseek-VLLM-RAGFlow-的详细指南" class="headerlink" title="Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南"></a>Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南</h3><p>下面为你提供 Docker +Deepseek + VLLM + RAGFlow  的安装部署指南。<br>环境准备</p>
+      
+      
+      
+      <div class="post-body">
+          <h3 id="Ubuntu-20-04-上部署-Docker-Deepseek-VLLM-RAGFlow-的详细指南"><a href="#Ubuntu-20-04-上部署-Docker-Deepseek-VLLM-RAGFlow-的详细指南" class="headerlink" title="Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南"></a>Ubuntu 20.04 上部署 Docker +Deepseek + VLLM + RAGFlow 的详细指南</h3><p>下面为你提供 Docker +Deepseek + VLLM + RAGFlow  的安装部署指南。<br>环境准备</p>
 <ul>
 <li>硬件：建议使用 GPU 服务器（至少 16GB 显存，如 RTX 3080）</li>
 <li>系统：Ubuntu 20.04&#x2F;22.04 LTS</li>
@@ -434,38 +359,17 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 </ul>
 <p>如果在安装过程中遇到问题，可以提供具体错误信息以便进一步排查。</p>
 
+      </div>
+      
+      
+      
     </div>
 
     
     
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/deepseek-vllm-ragflow/" rel="tag"><i class="fa fa-tag"></i> deepseek-vllm-ragflow</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/2025/07/code-server/" rel="prev" title="Code Server">
-                  <i class="fa fa-angle-left"></i> Code Server
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
 
 
-
-
-
-
-    <div class="comments" id="SOHUCS" sid="4a5c45526637de6035ca48dcc5cbf49e"></div>
+    <div class="comments" id="SOHUCS" sid="2e9df28ee469d0f1d3232ab6b7c5d870"></div>
 </div>
   </main>
 
@@ -486,14 +390,14 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">27k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
