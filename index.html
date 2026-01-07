@@ -281,7 +281,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-08-08 13:58:28" itemprop="dateModified" datetime="2025-08-08T13:58:28+08:00">2025-08-08</time>
+      <time title="修改时间：2026-01-07 15:31:44" itemprop="dateModified" datetime="2026-01-07T15:31:44+08:00">2026-01-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,7 +342,7 @@
 <li>硬盘：至少 20 GB 可用空间（机械硬盘 HDD 或固态硬盘 SSD 均可，SSD 速度更快）</li>
 <li>其他：网络接口（用于联网）、USB 接口（用于插入安装介质）</li>
 </ul>
-<ol start="2">
+<ol>
 <li>下载安装镜像</li>
 </ol>
 <ul>
@@ -351,424 +351,14 @@
 <li><p>选择 “ubuntu-22.04.x-live-server-amd64.iso”（x 为具体版本号，如 22.04.5），下载到本地。</p>
 </li>
 </ul>
-<ol start="3">
-<li>制作启动介质（U 盘）<br>需要将下载的 ISO 镜像写入 U 盘，作为安装启动盘：</li>
-</ol>
-<ul>
-<li>工具选择：<ul>
-<li>Windows 系统：使用 Rufus（简单易用，支持 UEFI&#x2F;BIOS）</li>
-<li>macOS&#x2F;Linux 系统：使用 dd 命令（终端操作，如 sudo dd if&#x3D;镜像路径 of&#x3D;&#x2F;dev&#x2F;sdX bs&#x3D;4M，注意替换 sdX 为 U 盘设备名）</li>
-</ul>
-</li>
-<li>操作注意：写入前备份 U 盘数据（会被格式化），选择 “GPT” 分区格式（支持 UEFI 启动，更主流）。</li>
-</ul>
-<ol start="4">
-<li>服务器启动设置<br>将制作好的 U 盘插入服务器，重启服务器并进入 BIOS&#x2F;UEFI 设置：</li>
-</ol>
-<ul>
-<li>进入方式：开机时按提示按键（如 Del、F2、F12，不同品牌主板不同）</li>
-<li>关键设置：<ul>
-<li>启动顺序：将 U 盘设为第一启动项（优先从 U 盘启动）</li>
-<li>关闭 “Secure Boot”（部分服务器可能需要，避免阻止非认证系统启动）</li>
-</ul>
-</li>
-<li>保存设置并重启，服务器会从 U 盘启动，进入 Ubuntu 安装界面。</li>
-</ul>
-<h4 id="二、开始安装（图形化引导流程）"><a href="#二、开始安装（图形化引导流程）" class="headerlink" title="二、开始安装（图形化引导流程）"></a>二、开始安装（图形化引导流程）</h4><p>Ubuntu 22.04 Server 提供图形化安装界面，操作直观，按以下步骤逐步完成：</p>
-<ol>
-<li>初始界面选择<br>启动后首先看到选择界面：</li>
-</ol>
-<ul>
-<li>选择 “Install Ubuntu Server”（安装 Ubuntu 服务器版，而非 “Try” 试用），按回车进入。</li>
-</ul>
-<ol start="2">
-<li>语言与键盘设置</li>
-</ol>
-<ul>
-<li>语言选择：默认 “English”（推荐保持英文，避免后续命令行乱码，服务器一般用英文环境）。</li>
-<li>键盘布局：选择 “English (US)”（默认即可，如需其他布局可通过 “Detect Keyboard Layout” 检测）。</li>
-</ul>
-<ol start="3">
-<li>网络配置（核心步骤）<br>服务器必须联网（后续需下载更新、安装软件），此步骤需配置网络：</li>
-</ol>
-<ul>
-<li>默认情况：如果服务器连接了有线网络且路由器支持 DHCP，系统会自动获取 IP 地址（显示 “Connected”），直接按 “Done” 进入下一步即可。</li>
-<li>手动配置（如需固定 IP）：<ol>
-<li>选择当前网络接口（如 “enp0s3”），按回车进入设置。</li>
-<li>选择 “Edit IPv4”，将 “Method” 从 “DHCP” 改为 “Manual”。</li>
-<li>填写信息：<ul>
-<li>Subnet：子网（如 192.168.1.0&#x2F;24）</li>
-<li>Address：服务器固定 IP（如 192.168.1.100）</li>
-<li>Gateway：网关（路由器 IP，如 192.168.1.1）</li>
-<li>Nameservers：DNS 服务器（如 8.8.8.8 或公司 DNS）</li>
-</ul>
-</li>
-<li>填写完成后按 “Save” 保存，确认 “Connected” 后按 “Done”。</li>
-</ol>
-</li>
-</ul>
-<ol start="4">
-<li>代理与镜像源设置</li>
-</ol>
-<ul>
-<li>代理服务器：如果服务器需通过代理联网，填写代理地址（如 <span class="exturl" data-url="aHR0cDovL+S7o+eQhklQOuerr+WPo++8ie+8m+aXoOS7o+eQhuWImeeVmeepuu+8jOaMiQ==">http://代理IP:端口）；无代理则留空，按<i class="fa fa-external-link-alt"></i></span> “Done”。</li>
-<li>镜像源设置：默认使用 Ubuntu 官方源（<span class="exturl" data-url="aHR0cDovL2FyY2hpdmUudWJ1bnR1LmNvbSks5L2G5Zu95YaF55So5oi35Y+v5pu/5o2i5Li6Lw==">http://archive.ubuntu.com），但国内用户可替换为<i class="fa fa-external-link-alt"></i></span> 国内镜像源（如阿里云、华为云），加快后续软件下载速度：<ul>
-<li>替换为阿里云源：<span class="exturl" data-url="aHR0cDovL21pcnJvcnMuYWxpeXVuLmNvbS8=">http://mirrors.aliyun.com/<i class="fa fa-external-link-alt"></i></span></li>
-<li>操作：删除默认地址，输入新地址后按 “Done”。</li>
-</ul>
-</li>
-</ul>
-<ol start="5">
-<li>磁盘分区（重要，需谨慎）<br>此步骤分配硬盘空间，决定系统如何使用硬盘，推荐两种方式：</li>
-</ol>
-<p>方式 1：自动分区（新手首选）</p>
-<ul>
-<li>选择 “Use an entire disk”（使用整个硬盘），系统会自动创建分区（根目录 &#x2F;、swap 交换分区等），适合单硬盘、无特殊需求的场景。</li>
-<li>确认硬盘：选择需要安装系统的硬盘（注意不要选错，避免格式化其他硬盘）。</li>
-<li>勾选 “Set up this disk as an LVM group”（推荐，LVM 支持后续动态调整分区大小，灵活度高）。</li>
-<li>按 “Done” 进入确认界面，选择 “Continue”（提示会格式化硬盘，确认无误后继续）。</li>
-</ul>
-<p>方式 2：手动分区（适合进阶需求）<br>如果需要自定义分区（如分离 &#x2F;home、&#x2F;var 目录，或多硬盘规划），选择 “Custom storage layout”，手动创建分区：</p>
-<ul>
-<li>基本分区建议（以 100GB 硬盘为例）：<ul>
-<li>&#x2F;boot：512MB（启动分区，必须）</li>
-<li>swap：2GB（交换分区，内存小于 4GB 时建议设置，等于或大于内存）</li>
-<li>&#x2F;（根目录）：剩余全部空间（存放系统和软件）</li>
-</ul>
-</li>
-<li>操作：选择硬盘 -&gt; “Add GPT Partition” -&gt; 填写大小、挂载点、文件系统（默认 ext4）。</li>
-</ul>
-<ol start="6">
-<li>用户设置（创建管理员账户）</li>
-</ol>
-<ul>
-<li>Profile setup：设置服务器的基本用户信息：<ul>
-<li>Your name：用户全名（如 “Server Admin”）</li>
-<li>Server name：服务器主机名（如 “ubuntu-server”，后续可通过 hostname 命令修改）</li>
-<li>Username：登录用户名（如 “admin”，避免用 “root” 直接登录）</li>
-<li>Password：登录密码（需复杂，至少 8 位，包含大小写、数字和符号）</li>
-<li>勾选 “Install OpenSSH server”（必须！安装 SSH 服务，后续可通过远程工具如 Xshell、Putty 登录服务器）。</li>
-</ul>
-</li>
-<li>按 “Done” 进入下一步。</li>
-</ul>
-<ol start="7">
-<li>可选软件安装（按需选择）<br>此步骤可选择预装一些常用服务（通过 “Snaps” 安装，轻量化）：</li>
-</ol>
-<ul>
-<li>可选项目：如 “Docker”“Kubernetes”“LAMP Server” 等，新手暂时不选（后续需要时再手动安装更灵活）。</li>
-<li>直接按 “Done”，进入安装过程（系统开始写入硬盘、安装基础组件）。</li>
-</ul>
-<ol start="8">
-<li>完成安装</li>
-</ol>
-<ul>
-<li>安装过程需要几分钟（取决于硬件速度和网络，若之前选了镜像源，速度会更快）。</li>
-<li>出现 “Installation complete” 提示后，按 “Reboot Now” 重启服务器。</li>
-<li>重启前会提示 “Please remove the installation medium”，拔出 U 盘，按回车确认，服务器将从硬盘启动。</li>
-</ul>
-<h4 id="三、安装后验证与基础配置"><a href="#三、安装后验证与基础配置" class="headerlink" title="三、安装后验证与基础配置"></a>三、安装后验证与基础配置</h4><p>重启后，服务器会显示登录界面（提示 “username@hostname:~$”），输入之前设置的用户名和密码登录，完成以下验证和配置：</p>
-<ol>
-<li>验证登录与网络</li>
-</ol>
-<ul>
-<li>登录后，输入 ip addr 命令，查看网络是否正常（是否有 IP 地址）。</li>
-<li>输入 ping baidu.com，测试能否联网（能收到回复说明网络正常，按 Ctrl+C 停止）。</li>
-</ul>
-<ol start="2">
-<li>切换到 root 用户（可选）<br>默认用户是普通用户，需使用 sudo 执行管理员命令。若习惯用 root，可启用 root 账户：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置 root 密码（首次使用需初始化）</span></span><br><span class="line"><span class="built_in">sudo</span> passwd root</span><br><span class="line"><span class="comment"># 输入当前用户密码，再输入 root 新密码</span></span><br><span class="line"><span class="comment"># 切换到 root 用户</span></span><br><span class="line">su - root</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>更新系统（推荐）<br>安装完成后，先更新系统到最新版本，修复漏洞：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update  <span class="comment"># 更新软件源索引</span></span><br><span class="line"><span class="built_in">sudo</span> apt upgrade -y  <span class="comment"># 升级所有软件包（-y 自动确认）</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>远程登录测试（关键）<br>在本地电脑通过 SSH 工具（如 Xshell、FinalShell）连接服务器，验证远程管理是否正常：</li>
-</ol>
-<ul>
-<li>连接信息：IP 地址（通过 ip addr 查看）、用户名（安装时设置的）、密码。</li>
-<li>命令行连接（本地为 Linux&#x2F;macOS）：ssh 用户名@服务器IP（如 ssh <span class="exturl" data-url="bWFpbHRvOiYjeDYxOyYjMTAwOyYjMTA5OyYjMTA1OyYjeDZlOyYjeDQwOyYjeDMxOyYjNTc7JiN4MzI7JiM0NjsmIzQ5OyYjNTQ7JiN4Mzg7JiN4MmU7JiN4MzE7JiM0NjsmIzQ5OyYjNDg7JiN4MzA7">admin@192.168.1.100<i class="fa fa-external-link-alt"></i></span>）。</li>
-<li>若能成功登录，说明 SSH 服务正常，后续可脱离服务器显示器，远程管理。</li>
-</ul>
-<p>四、常见问题与解决</p>
-<ol>
-<li>安装时无法联网：</li>
-</ol>
-<ul>
-<li>检查网线是否插好，路由器是否正常。</li>
-<li>若 DHCP 失败，手动配置 IP（参考步骤 3 的 “手动配置”）。</li>
-</ul>
-<ol start="2">
-<li>分区时提示 “无可用磁盘”：</li>
-</ol>
-<ul>
-<li>确认硬盘已正确识别（在分区界面查看是否有硬盘列表）。</li>
-<li>若硬盘之前有其他系统，可先删除原有分区（选择硬盘 -&gt; “Delete”）。</li>
-</ul>
-<ol start="3">
-<li>重启后无法进入系统：</li>
-</ol>
-<ul>
-<li>检查 BIOS 启动顺序是否已改为硬盘（安装后需将硬盘设为第一启动项）。</li>
-<li>若提示 “grub rescue”，可能是分区错误，重新安装并正确分区。</li>
-</ul>
-<ol start="4">
-<li>远程 SSH 无法连接：</li>
-</ol>
-<ul>
-<li>确认安装时勾选了 “Install OpenSSH server”，若未勾选，登录服务器后手动安装：sudo apt install openssh-server。</li>
-<li>检查防火墙：默认 Ubuntu 防火墙不拦截 SSH，若开启需放行：sudo ufw allow ssh。</li>
-</ul>
-<ol start="5">
-<li>在 Ubuntu 系统中，修改多系统启动顺序</li>
-</ol>
-<ul>
-<li>GRUB Customizer（图形界面工具）<ul>
-<li><p>安装方法：在终端中依次执行以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> add-apt-repository ppa:danielrichter2007/grub-customizer</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install grub-customizer</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用方法：安装完成后，在终端输入grub-customizer启动工具，或通过应用菜单搜索打开。打开后，在列表中选择要设置为默认的系统，点击 “设置为默认”，最后点击 “保存” 即可</p>
-<ul>
-<li>常规设置(G)-&gt; 默认项-&gt;预订义(D):-&gt;选择 -&gt;保存</li>
-<li>文件(F)-&gt; 安装到MBR(I)……</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol start="6">
-<li>在ubuntu 系统中，命令方式连接wifi</li>
-</ol>
-<ul>
-<li><ol>
-<li><p>确保无线网卡已启用且可用</p>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="built_in">link</span> show  <span class="comment"># 查找wlan0或类似无线接口名，确认状态为UP</span></span><br></pre></td></tr></table></figure>
-
-<p>   手动安装wifi驱动</p>
-   <details>
-   <summary> 设置</summary>
-   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  <span class="built_in">sudo</span> apt install gcc  make -y <span class="comment">#安装gcc</span></span><br><span class="line">  <span class="built_in">sudo</span> dpkg -i xxx.deb  <span class="comment">#安装网卡xxx.deb文件</span></span><br><span class="line">  <span class="built_in">sudo</span> apt install net-tools <span class="comment"># ifconfig</span></span><br><span class="line">  <span class="built_in">sudo</span> apt install network-manager <span class="comment">#安装 network-manager</span></span><br><span class="line">  <span class="comment">#nmcli配置 WIFI</span></span><br><span class="line">  <span class="built_in">sudo</span> nmcli device wifi list <span class="comment">#查看Wifi</span></span><br><span class="line">  <span class="built_in">sudo</span> nmcli connection add <span class="built_in">type</span> wifi con-name <span class="string">&quot;-&quot;</span> ifname <span class="string">&quot;*&quot;</span>   ssid <span class="string">&quot;wifi&quot;</span> 802-11-wireless.hidden <span class="built_in">yes</span> 802-11-wireless-security.key-mgmt wpa-psk 802-11-wireless-security.psk <span class="string">&quot;8AhbBvdf&quot;</span> connection.autoconnect <span class="built_in">yes</span> <span class="comment">#连接Wifi</span></span><br><span class="line">  <span class="built_in">sudo</span> nmcli connection show <span class="comment">#查看连接</span></span><br><span class="line">  <span class="built_in">sudo</span> nmcli connection delete <span class="string">&quot;wifi&quot;</span> <span class="comment">#删除连接</span></span><br><span class="line">```‌</span><br><span class="line">```bash</span><br><span class="line"><span class="comment">#使用 cloud-init 配置网络</span></span><br><span class="line"><span class="built_in">sudo</span> nano /etc/cloud/cloud.cfg.d/99-custom-networking.cfg</span><br></pre></td></tr></table></figure>
-
-<pre><code>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#A start job is running for wait for network to be Configured</span></span><br><span class="line"><span class="comment"># 获取实际接口名称</span></span><br><span class="line">INTERFACE=$(ip addr | grep -v <span class="string">&#x27;^[0-9]*: lo&#x27;</span> | grep -oP <span class="string">&#x27;^[0-9]*: \K[^:]+&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建正确的配置文件</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /etc/systemd/system/systemd-networkd-wait-online.service.d</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;[Service]</span></span><br><span class="line"><span class="string">ExecStart=</span></span><br><span class="line"><span class="string">ExecStart=/lib/systemd/systemd-networkd-wait-online --interface=<span class="variable">$INTERFACE</span></span></span><br><span class="line"><span class="string">TimeoutStartSec=30&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/systemd/system/systemd-networkd-wait-online.service.d/override.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载并启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart systemd-networkd-wait-online</span><br></pre></td></tr></table></figure>
-</code></pre>
-   </details></li>
-</ol>
-</li>
-<li><ol start="2">
-<li><p>在 Ubuntu 系统中，可通过设置网络共享和 IP 转发，使一台通过 WiFi 上网的电脑将网络共享给另一台通过网线连接的电脑。以下是具体操作步骤‌：</p>
-   <details>
-       <summary> 设置</summary>
-
-<ul>
-<li><p>配置主机（能上网的电脑）：</p>
-</li>
-<li><p>查看网卡名称：打开终端，输入命令iwconfig，查看无线网卡和有线网卡的名称，通常无线网卡名称类似wlo1，有线网卡名称类似eth0，需记住这两个名称，后续配置会用到。</p>
-</li>
-<li><p>设置有线网卡静态 IP：执行命令sudo ifconfig eth0 10.42.0.1&#x2F;24，将有线网卡的 IP 地址设置为10.42.0.1，子网掩码为255.255.255.0。可通过ifconfig命令查看配置是否成功。</p>
-</li>
-<li><p>开启 IP 转发：临时开启可在终端输入sudo echo “1”&gt;&#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward。若要永久开启，可使用命令sudo vim &#x2F;etc&#x2F;sysctl.conf，打开文件后，添加或取消注释net.ipv4.ip_forward &#x3D; 1，保存并退出，然后执行sudo sysctl -p使设置生效。<br> 配置 NAT 规则：在终端依次输入以下命令，配置 iptables 规则，清除原有规则并允许数据包转发，设置 NAT 转换。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置NAT规则</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A POSTROUTING -o wlo1 -j MASQUERADE</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许转发流量</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -i wlo1 -o enp7s0 -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -i enp7s0 -o wlo1 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存规则</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install iptables-persistent       </span><br><span class="line"><span class="built_in">sudo</span> netfilter-persistent save</span><br></pre></td></tr></table></figure>
-
-<p>  其中wlo1需替换为实际的无线网卡名称。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># VPN</span></span><br><span class="line"><span class="comment"># 设置NAT规则</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许转发流量</span></span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -i ppp0 -o enp7s0 -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line"><span class="built_in">sudo</span> iptables -A FORWARD -i enp7s0 -o ppp0 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存规则</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install iptables-persistent</span><br><span class="line"><span class="built_in">sudo</span> netfilter-persistent save</span><br></pre></td></tr></table></figure>
-
-<pre><code>其中ppp0需替换为VPN拨号网卡名称。
-</code></pre>
-<ul>
-<li><p>配置从机（待上网的电脑）：</p>
-<ul>
-<li>设置静态 IP：在终端执行sudo ifconfig eth1 10.42.0.2&#x2F;24，将有线网卡的 IP 地址设置为10.42.0.2，子网掩码为255.255.255.0，eth1需替换为实际的有线网卡名称。</li>
-<li>设置网关和 DNS：输入以下命令设置网关为10.42.0.1，并设置 DNS 服务器为223.5.5.5。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> route add -net 0.0.0.0/0 gw 10.42.0.1</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> +666 /etc/resolv.conf </span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">echo</span> <span class="string">&quot;nameserver 223.5.5.5&quot;</span> &gt; /etc/resolv.conf</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-  </details>
-</li>
-<li><ol start="3">
-<li>root账户设置密码</li>
-</ol>
-<ul>
-<li><p>当前普通用户界面下输入命令，然后按提示两次输入密码即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> passwd root</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><ol start="4">
-<li>驱动更新</li>
-</ol>
-<ul>
-<li><p>更新驱动</p>
-<ul>
-<li><ol>
-<li>系统准备 首先更新系统并安装必要的依赖：</li>
-</ol>
-</li>
-</ul>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt upgrade -y</span><br><span class="line"><span class="built_in">sudo</span> apt install -y build-essential dkms linux-headers-$(<span class="built_in">uname</span> -r)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="2">
-<li>添加 NVIDIA 软件源</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> add-apt-repository ppa:graphics-drivers/ppa</span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="3">
-<li>确定推荐的驱动版本</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu-drivers devices</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="4">
-<li>安装驱动</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install -y nvidia-driver-XXX  <span class="comment"># 使用上一步推荐的版本号</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="5">
-<li>配置内核模块（可选）如果遇到驱动冲突，创建配置文件禁用开源驱动：</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/modprobe.d/blacklist-nouveau.conf &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">blacklist nouveau</span></span><br><span class="line"><span class="string">options nouveau modeset=0</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
-
-<p>更新内核 initramfs：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> update-initramfs -u</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="6">
-<li>重启系统</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> reboot</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="7">
-<li>验证安装</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="8">
-<li>安装 CUDA Toolkit（可选） 若需要 GPU 计算能力（如运行 VLLM），安装 CUDA：</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rsync -avz -e ssh &lt;云服务器实例登录名&gt;@&lt;云服务器实例公网IP地址&gt;:&lt;实例文件或文件夹路径&gt; &lt;本地目录&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 CUDA 12.9 仓库</span></span><br><span class="line">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600</span><br><span class="line">wget -c https://developer.download.nvidia.com/compute/cuda/12.9.0/local_installers/cuda-repo-ubuntu2204-12-9-local_12.9.0-575.51.03-1_amd64.deb</span><br><span class="line"><span class="built_in">sudo</span> dpkg -i cuda-repo-ubuntu2204-12-9-local_12.9.0-575.51.03-1_amd64.deb</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /var/cuda-repo-ubuntu2204-12-9-<span class="built_in">local</span>/cuda-*-keyring.gpg /usr/share/keyrings/</span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="comment"># 安装 CUDA Toolkit（不含驱动，因已安装 575）</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get -y install cuda-toolkit-12-9</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=/usr/local/cuda-12.9/bin:$PATH&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export LD_LIBRARY_PATH=/usr/local/cuda-12.9/lib64:$LD_LIBRARY_PATH&#x27;</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="9">
-<li>安装 cuDNN 9.10.2</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 cuDNN 9.10.2（CUDA 12.9 推荐版本）</span></span><br><span class="line">wget -c https://developer.download.nvidia.com/compute/cudnn/9.10.2/local_installers/cudnn-local-repo-ubuntu2204-9.10.2_1.0-1_amd64.deb</span><br><span class="line"><span class="built_in">sudo</span> dpkg -i cudnn-local-repo-ubuntu2204-9.10.2_1.0-1_amd64.deb</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /var/cudnn-local-repo-ubuntu2204-9.10.2/cudnn-*-keyring.gpg /usr/share/keyrings/</span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get -y install cudnn</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><ol start="10">
-<li>验证安装</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvcc --version  <span class="comment"># 应显示 release 12.9</span></span><br><span class="line"><span class="comment">#cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2  # 应显示 8.10.5</span></span><br><span class="line"><span class="built_in">cat</span> /usr/include/x86_64-linux-gnu/cudnn_version.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>常见问题解决方案</p>
-<ul>
-<li><ol>
-<li>驱动安装失败：尝试使用 NVIDIA 官方.run 文件安装</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>登录循环问题：可能是驱动与 Xorg 冲突，尝试以安全模式登录并重新安装</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>CUDA 版本不兼容：确保 VLLM 支持的 CUDA 版本与安装的一致</li>
-</ol>
-</li>
-</ul>
-<p>完成这些步骤后，你的系统应能正常识别并使用 NVIDIA GPU，可顺利运行基于 GPU 加速的 VLLM 和 Deepseek 模型。</p>
-</li>
-</ul>
-</li>
-<li><p>7.禁止自动休眠</p>
-<ul>
-<li><ol>
-<li>执行如下命令查看休眠模式的情况，如果sleep状态是loaded，也就是处于自动休眠开启状态</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status sleep.target</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.接下来，执行如下命令关闭系统的自动休眠开关：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这些命令做了以下几点：</span></span><br><span class="line"><span class="comment"># 通过mask命令，你禁用了所有休眠相关的systemd目标。</span></span><br><span class="line"><span class="comment"># 通过set-default命令，你设置默认的运行级别为多用户文本模式（即命令行界面）</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br><span class="line"><span class="built_in">sudo</span> systemctl set-default multi-user.target</span><br><span class="line"><span class="comment">####################################################</span></span><br><span class="line"><span class="comment"># 如果你想要恢复自动休眠功能，可以使用以下命令：</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target</span><br><span class="line"><span class="built_in">sudo</span> systemctl set-default graphical.target</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="3">
-<li>再次执行查看命令，可以看到sleep的状态已经变成了masked，也就是关闭了。</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>编辑<code>/etc/systemd/logind.conf</code>文件：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/logind.conf</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="5">
-<li>在文件中找到以下行：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#IdleAction=</span><br><span class="line">#IdleActionSec=</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="6">
-<li>将这两行的注释符号#移除，并设置IdleAction为ignore，IdleActionSec为0，如下所示：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IdleAction=ignore</span><br><span class="line">IdleActionSec=0</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="7">
-<li>保存文件并关闭编辑器</li>
-</ol>
-</li>
-<li><ol start="8">
-<li>使用以下命令重新加载systemd配置：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart systemd-logind.service</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="9">
-<li>完成！现在Ubuntu Server 22.04将不会因为无操作而自动休眠。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>8.定时自动关闭显示器</p>
-<ul>
-<li><ol>
-<li>想要定时关闭显示器，可以编辑<code>/etc/default/grub</code>这个文件</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>通过修改GRUB_CMDLINE_LINUX_DEFAULT变量，你可以添加或修改传递给内核的参数，以便在启动时对系统进行自定义配置。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ipv6.disable=1：禁用 IPv6 协议。</span></span><br><span class="line"><span class="comment"># consoleblank=300：设置控制台空闲时间为 300 秒后自动关闭。</span></span><br><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">&quot;ipv6.disable=1 consoleblank=300&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><ol start="3">
-<li>修改完了运行sudo update-grub，然后重启，即可设置系统5分钟没有活动自动关闭显示器。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2025/07/ubuntu-server/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -830,7 +420,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-09-11 09:35:08" itemprop="dateModified" datetime="2025-09-11T09:35:08+08:00">2025-09-11</time>
+      <time title="修改时间：2026-01-07 15:32:37" itemprop="dateModified" datetime="2026-01-07T15:32:37+08:00">2026-01-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -892,23 +482,6 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 <li>已安装 NVIDIA 驱动（版本 ≥ 525，支持 CUDA 12.0+）</li>
 <li>系统预留 ≥ 50GB 存储空间（用于模型缓存和数据存储）</li>
 </ul>
-<h4 id="1-安装-Docker-及相关工具"><a href="#1-安装-Docker-及相关工具" class="headerlink" title="1. 安装 Docker 及相关工具"></a>1. 安装 Docker 及相关工具</h4><p>1.1 依赖与密钥配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade -y</span><br><span class="line"><span class="built_in">sudo</span> apt install -y ca-certificates curl gnupg lsb-release</span><br><span class="line"><span class="comment"># 创建密钥存储目录</span></span><br><span class="line"><span class="built_in">sudo</span> install -m 0755 -d /etc/apt/keyrings</span><br><span class="line"><span class="comment"># 添加 Docker 官方 GPG 密钥</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | <span class="built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/docker.gpg</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> a+r /etc/apt/keyrings/docker.gpg</span><br></pre></td></tr></table></figure>
-
-<p>1.2 配置 Docker 源并安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加 Docker 软件源</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=<span class="subst">$(dpkg --print-architecture)</span> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu <span class="subst">$(lsb_release -cs)</span> stable&quot;</span> | <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br><span class="line"><span class="comment"># 安装 Docker 组件</span></span><br><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br><span class="line"><span class="comment"># 添加当前用户到 docker 组（避免每次使用 sudo）</span></span><br><span class="line"><span class="built_in">sudo</span> usermod -aG docker <span class="variable">$USER</span> &amp;&amp; newgrp docker</span><br></pre></td></tr></table></figure>
-
-<p>1.3 配置 Docker 镜像加速（关键优化）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://docker.registry.cyou&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://dockerproxy.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;default-runtime&quot;</span>: <span class="string">&quot;nvidia&quot;</span>,  <span class="comment"># 默认启用 NVIDIA 运行时</span></span><br><span class="line">  <span class="string">&quot;runtimes&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;nvidia&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;path&quot;</span>: <span class="string">&quot;nvidia-container-runtime&quot;</span>,</span><br><span class="line">      <span class="string">&quot;runtimeArgs&quot;</span>: []</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重启 Docker 服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart docker</span><br></pre></td></tr></table></figure>
-
-<p>1.4 验证 Docker 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证基础功能</span></span><br><span class="line"><span class="built_in">sudo</span> docker run --<span class="built_in">rm</span> hello-world</span><br><span class="line"><span class="comment"># 验证 GPU 支持（若使用 GPU）</span></span><br><span class="line"><span class="built_in">sudo</span> docker run --<span class="built_in">rm</span> --gpus all swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/nvidia/cuda:12.9.1-base-ubuntu22.04  nvidia-smi</span><br><span class="line"><span class="comment"># 若成功输出 GPU 信息，则说明 GPU 配置正常</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考： <span class="exturl" data-url="aHR0cHM6Ly9kb2NrZXIuYWl0eXAuY29tLw==">渡渡鸟镜像<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2025/07/vllm-ragflow/#more" rel="contents">
@@ -1284,7 +857,7 @@ B --&gt;|精准问答| E[终端应用]</code></pre>
 <li><del>删除线</del> - <code>~~删除线~~</code></li>
 <li><code>Code 标记</code> - <code>`Code 标记`</code></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly93d3cubGRkZ28ubmV0L3N0cmluZy9tYXJrZG93bi1lZGl0b3I=">超级链接<i class="fa fa-external-link-alt"></i></span> - <code>[超级链接](https://www.lddgo.net/string/markdown-editor)</code></li>
-<li><span class="exturl" data-url="bWFpbHRvOiYjMTE3OyYjeDczOyYjMTAxOyYjeDcyOyYjMTEwOyYjOTc7JiMxMDk7JiN4NjU7JiN4NDA7JiMxMDM7JiN4NmQ7JiN4NjE7JiMxMDU7JiMxMDg7JiN4MmU7JiM5OTsmIzExMTsmIzEwOTs=">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
+<li><span class="exturl" data-url="bWFpbHRvOiYjMTE3OyYjeDczOyYjeDY1OyYjeDcyOyYjMTEwOyYjeDYxOyYjMTA5OyYjMTAxOyYjNjQ7JiMxMDM7JiN4NmQ7JiN4NjE7JiMxMDU7JiMxMDg7JiN4MmU7JiM5OTsmIzExMTsmIzEwOTs=">username@gmail.com<i class="fa fa-external-link-alt"></i></span> - <code>[username@gmail.com](mailto:username@gmail.com)</code></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
